@@ -59,6 +59,36 @@ class S {
       args: [],
     );
   }
+
+  /// `sign in`
+  String get sign_in {
+    return Intl.message(
+      'sign in',
+      name: 'sign_in',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home page`
+  String get home_page_title {
+    return Intl.message(
+      'Home page',
+      name: 'home_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Money page`
+  String get money_page_title {
+    return Intl.message(
+      'Money page',
+      name: 'money_page_title',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

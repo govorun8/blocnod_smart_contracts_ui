@@ -1,3 +1,6 @@
 {
-    "fonts_test": "Тест шрифтов"
+    "fonts_test": "Тест шрифтов",
+    "sign_in": "Войти",
+    "home_page_title": "Домашняя страница",
+    "money_page_title": "Денежная страница"
 }
