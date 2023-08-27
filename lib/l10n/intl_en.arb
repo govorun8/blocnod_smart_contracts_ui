@@ -4,5 +4,16 @@
     "home_page_title": "Home page",
     "money_page_title": "Money page",
     "smart_contract_page_title": "Smart contract creation",
-    "new_smart_contract": "New smart contract"
+    "new_smart_contract": "New smart contract",
+    "select_contract_type": "Select contract type",
+    "type_not_selected": "Type not selected",
+    "rent": "Rent",
+    "transportation": "Transportation",
+    "select_contractor": "Select contructor",
+    "contractor_not_selected": "Contructor not selected",
+    "your_address": "Your address",
+    "address_hint": "City, street, house...",
+    "delivery_point": "Select the delivery point",
+    "delivery_point_hint": "Point not selected",
+    "rental_period": "Rental period"
 }

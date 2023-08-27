@@ -22,13 +22,32 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "address_hint":
+            MessageLookupByLibrary.simpleMessage("City, street, house..."),
+        "contractor_not_selected":
+            MessageLookupByLibrary.simpleMessage("Contructor not selected"),
+        "delivery_point":
+            MessageLookupByLibrary.simpleMessage("Select the delivery point"),
+        "delivery_point_hint":
+            MessageLookupByLibrary.simpleMessage("Point not selected"),
         "fonts_test": MessageLookupByLibrary.simpleMessage("Fonts test"),
         "home_page_title": MessageLookupByLibrary.simpleMessage("Home page"),
         "money_page_title": MessageLookupByLibrary.simpleMessage("Money page"),
         "new_smart_contract":
             MessageLookupByLibrary.simpleMessage("New smart contract"),
+        "rent": MessageLookupByLibrary.simpleMessage("Rent"),
+        "rental_period": MessageLookupByLibrary.simpleMessage("Rental period"),
+        "select_contract_type":
+            MessageLookupByLibrary.simpleMessage("Select contract type"),
+        "select_contractor":
+            MessageLookupByLibrary.simpleMessage("Select contructor"),
         "sign_in": MessageLookupByLibrary.simpleMessage("sign in"),
         "smart_contract_page_title":
-            MessageLookupByLibrary.simpleMessage("Smart contract creation")
+            MessageLookupByLibrary.simpleMessage("Smart contract creation"),
+        "transportation":
+            MessageLookupByLibrary.simpleMessage("Transportation"),
+        "type_not_selected":
+            MessageLookupByLibrary.simpleMessage("Type not selected"),
+        "your_address": MessageLookupByLibrary.simpleMessage("Your address")
       };
 }

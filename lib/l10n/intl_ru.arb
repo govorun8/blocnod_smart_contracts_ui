@@ -4,5 +4,16 @@
     "home_page_title": "Домашняя страница",
     "money_page_title": "Денежная страница",
     "smart_contract_page_title": "Создание смарт контракта",
-    "new_smart_contract": "Новый смарт контракт"
+    "new_smart_contract": "Новый смарт контракт",
+    "select_contract_type": "Выберите тип контракта",
+    "type_not_selected": "Тип не выбран",
+    "rent": "Аренда",
+    "transportation": "Транспортировка",
+    "select_contractor": "Выберите контрагента",
+    "contractor_not_selected": "Контрагент не выбран",
+    "your_address": "Ваш адрес",
+    "address_hint": "Город, улица, дом...",
+    "delivery_point": "Выберите пункт выдачи",
+    "delivery_point_hint": "Пункт не выбран",
+    "rental_period": "Срок аренды"
 }

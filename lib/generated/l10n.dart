@@ -109,6 +109,116 @@ class S {
       args: [],
     );
   }
+
+  /// `Select contract type`
+  String get select_contract_type {
+    return Intl.message(
+      'Select contract type',
+      name: 'select_contract_type',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Type not selected`
+  String get type_not_selected {
+    return Intl.message(
+      'Type not selected',
+      name: 'type_not_selected',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rent`
+  String get rent {
+    return Intl.message(
+      'Rent',
+      name: 'rent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Transportation`
+  String get transportation {
+    return Intl.message(
+      'Transportation',
+      name: 'transportation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select contructor`
+  String get select_contractor {
+    return Intl.message(
+      'Select contructor',
+      name: 'select_contractor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contructor not selected`
+  String get contractor_not_selected {
+    return Intl.message(
+      'Contructor not selected',
+      name: 'contractor_not_selected',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your address`
+  String get your_address {
+    return Intl.message(
+      'Your address',
+      name: 'your_address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `City, street, house...`
+  String get address_hint {
+    return Intl.message(
+      'City, street, house...',
+      name: 'address_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select the delivery point`
+  String get delivery_point {
+    return Intl.message(
+      'Select the delivery point',
+      name: 'delivery_point',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Point not selected`
+  String get delivery_point_hint {
+    return Intl.message(
+      'Point not selected',
+      name: 'delivery_point_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rental period`
+  String get rental_period {
+    return Intl.message(
+      'Rental period',
+      name: 'rental_period',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

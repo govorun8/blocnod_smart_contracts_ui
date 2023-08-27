@@ -14,8 +14,8 @@ enum ResponseStatus {
 }
 
 enum SmartContractType {
-  payment,
-  delivery,
+  rent,
+  transportation,
 }
 
 enum SmartContractStatus {

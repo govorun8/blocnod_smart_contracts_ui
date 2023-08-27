@@ -40,6 +40,6 @@ const _$SmartContractStatusEnumMap = {
 };
 
 const _$SmartContractTypeEnumMap = {
-  SmartContractType.payment: 'payment',
-  SmartContractType.delivery: 'delivery',
+  SmartContractType.rent: 'rent',
+  SmartContractType.transportation: 'transportation',
 };

@@ -38,6 +38,7 @@ class CustomDropdown extends StatelessWidget {
             height: 50,
             width: double.maxFinite,
             alignment: Alignment.centerLeft,
+            padding: const EdgeInsets.only(left: 10, right: 10),
             decoration: BoxDecoration(
               border: Border.all(
                 width: 1.5,
@@ -48,6 +49,8 @@ class CustomDropdown extends StatelessWidget {
             child: Text(
               hint,
               style: theme.textTheme.bodyMedium,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
             ),
           ),
         ),

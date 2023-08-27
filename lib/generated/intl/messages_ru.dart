@@ -22,6 +22,14 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "address_hint":
+            MessageLookupByLibrary.simpleMessage("Город, улица, дом..."),
+        "contractor_not_selected":
+            MessageLookupByLibrary.simpleMessage("Контрагент не выбран"),
+        "delivery_point":
+            MessageLookupByLibrary.simpleMessage("Выберите пункт выдачи"),
+        "delivery_point_hint":
+            MessageLookupByLibrary.simpleMessage("Пункт не выбран"),
         "fonts_test": MessageLookupByLibrary.simpleMessage("Тест шрифтов"),
         "home_page_title":
             MessageLookupByLibrary.simpleMessage("Домашняя страница"),
@@ -29,8 +37,19 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Денежная страница"),
         "new_smart_contract":
             MessageLookupByLibrary.simpleMessage("Новый смарт контракт"),
+        "rent": MessageLookupByLibrary.simpleMessage("Аренда"),
+        "rental_period": MessageLookupByLibrary.simpleMessage("Срок аренды"),
+        "select_contract_type":
+            MessageLookupByLibrary.simpleMessage("Выберите тип контракта"),
+        "select_contractor":
+            MessageLookupByLibrary.simpleMessage("Выберите контрагента"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Войти"),
         "smart_contract_page_title":
-            MessageLookupByLibrary.simpleMessage("Создание смарт контракта")
+            MessageLookupByLibrary.simpleMessage("Создание смарт контракта"),
+        "transportation":
+            MessageLookupByLibrary.simpleMessage("Транспортировка"),
+        "type_not_selected":
+            MessageLookupByLibrary.simpleMessage("Тип не выбран"),
+        "your_address": MessageLookupByLibrary.simpleMessage("Ваш адрес")
       };
 }

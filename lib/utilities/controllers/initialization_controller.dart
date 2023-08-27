@@ -5,6 +5,7 @@ import 'package:blocnod_smart_contracts_ui/pages/money_page/smart_contract_creat
 import 'package:blocnod_smart_contracts_ui/utilities/injection_conf/injection.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 class InitializationController {
   final _rootNavigatorKey = GlobalKey<NavigatorState>();
@@ -13,6 +14,7 @@ class InitializationController {
   void init() {
     WidgetsFlutterBinding.ensureInitialized();
     configureDependencies();
+    initializeDateFormatting();
   }
 
   GoRouter initializeRouter() {
