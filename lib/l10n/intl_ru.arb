@@ -2,5 +2,7 @@
     "fonts_test": "Тест шрифтов",
     "sign_in": "Войти",
     "home_page_title": "Домашняя страница",
-    "money_page_title": "Денежная страница"
+    "money_page_title": "Денежная страница",
+    "smart_contract_page_title": "Создание смарт контракта",
+    "new_smart_contract": "Новый смарт контракт"
 }

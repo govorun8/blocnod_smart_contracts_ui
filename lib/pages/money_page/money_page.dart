@@ -1,4 +1,7 @@
+import 'package:blocnod_smart_contracts_ui/generated/l10n.dart';
+import 'package:blocnod_smart_contracts_ui/utilities/injection_conf/injection.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class MoneyPageView extends StatefulWidget {
   const MoneyPageView({super.key});
@@ -8,10 +11,30 @@ class MoneyPageView extends StatefulWidget {
 }
 
 class MoneyPageState extends State<MoneyPageView> {
+  S translate = getIt<S>();
   @override
   Widget build(BuildContext context) {
-    return Container(
+    ThemeData theme = Theme.of(context);
+    return Material(
       color: Colors.amber,
+      child: GestureDetector(
+        onTap: () {
+          GoRouter.of(context).go('/money/contract');
+        },
+        child: Center(
+          child: Container(
+            width: 100,
+            height: 50,
+            color: Colors.blue,
+            child: Center(
+              child: Text(
+                translate.new_smart_contract,
+                style: theme.textTheme.bodyMedium,
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

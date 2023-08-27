@@ -5,6 +5,14 @@ enum AuthentificationStatus {
   noInternet,
 }
 
+enum ResponseStatus {
+  done,
+  failed,
+  declined,
+  serverError,
+  noInternet,
+}
+
 enum SmartContractType {
   payment,
   delivery,

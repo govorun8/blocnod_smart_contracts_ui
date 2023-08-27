@@ -89,6 +89,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Smart contract creation`
+  String get smart_contract_page_title {
+    return Intl.message(
+      'Smart contract creation',
+      name: 'smart_contract_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New smart contract`
+  String get new_smart_contract {
+    return Intl.message(
+      'New smart contract',
+      name: 'new_smart_contract',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

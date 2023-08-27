@@ -25,6 +25,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "fonts_test": MessageLookupByLibrary.simpleMessage("Fonts test"),
         "home_page_title": MessageLookupByLibrary.simpleMessage("Home page"),
         "money_page_title": MessageLookupByLibrary.simpleMessage("Money page"),
-        "sign_in": MessageLookupByLibrary.simpleMessage("sign in")
+        "new_smart_contract":
+            MessageLookupByLibrary.simpleMessage("New smart contract"),
+        "sign_in": MessageLookupByLibrary.simpleMessage("sign in"),
+        "smart_contract_page_title":
+            MessageLookupByLibrary.simpleMessage("Smart contract creation")
       };
 }

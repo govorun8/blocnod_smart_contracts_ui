@@ -27,6 +27,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Домашняя страница"),
         "money_page_title":
             MessageLookupByLibrary.simpleMessage("Денежная страница"),
-        "sign_in": MessageLookupByLibrary.simpleMessage("Войти")
+        "new_smart_contract":
+            MessageLookupByLibrary.simpleMessage("Новый смарт контракт"),
+        "sign_in": MessageLookupByLibrary.simpleMessage("Войти"),
+        "smart_contract_page_title":
+            MessageLookupByLibrary.simpleMessage("Создание смарт контракта")
       };
 }

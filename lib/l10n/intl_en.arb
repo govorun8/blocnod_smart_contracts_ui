@@ -2,5 +2,7 @@
     "fonts_test": "Fonts test",
     "sign_in": "sign in",
     "home_page_title": "Home page",
-    "money_page_title": "Money page"
+    "money_page_title": "Money page",
+    "smart_contract_page_title": "Smart contract creation",
+    "new_smart_contract": "New smart contract"
 }
