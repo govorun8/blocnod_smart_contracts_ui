@@ -1,3 +1,6 @@
 {
-    "fonts_test": "Fonts test"
+    "fonts_test": "Fonts test",
+    "sign_in": "sign in",
+    "home_page_title": "Home page",
+    "money_page_title": "Money page"
 }

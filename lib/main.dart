@@ -1,7 +1,8 @@
+import 'package:blocnod_smart_contracts_ui/custom_theme.dart';
+import 'package:blocnod_smart_contracts_ui/pages/auth_page/auth_page_view.dart';
+import 'package:blocnod_smart_contracts_ui/pages/main_nav_bar.dart';
 import 'package:blocnod_smart_contracts_ui/utilities/injection_conf/injection.dart';
 import 'package:flutter/material.dart';
-
-import 'pages/home_page/home_page_view.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,12 +15,13 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: HomePageView(),
-        ),
-      ),
+    return MaterialApp(
+      theme: CustomTheme.lightTheme,
+      initialRoute: '/',
+      routes: {
+        '/': (context) => AuthPageView(),
+        '/nav_bar': (context) => MainNavigationBar(),
+      },
     );
   }
 }
