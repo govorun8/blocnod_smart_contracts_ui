@@ -24,10 +24,8 @@ mixin _$SmartContract {
   User get contractCreator => throw _privateConstructorUsedError;
   User get contractExecutor => throw _privateConstructorUsedError;
   double get contractValue => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get shipping =>
-      throw _privateConstructorUsedError; // required DateTime startDate,
-// required DateTime expirationDate,
   SmartContractStatus get status => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get shipping => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -46,8 +44,8 @@ abstract class $SmartContractCopyWith<$Res> {
       User contractCreator,
       User contractExecutor,
       double contractValue,
-      Map<String, dynamic>? shipping,
-      SmartContractStatus status});
+      SmartContractStatus status,
+      Map<String, dynamic>? shipping});
 
   $UserCopyWith<$Res> get contractCreator;
   $UserCopyWith<$Res> get contractExecutor;
@@ -70,8 +68,8 @@ class _$SmartContractCopyWithImpl<$Res, $Val extends SmartContract>
     Object? contractCreator = null,
     Object? contractExecutor = null,
     Object? contractValue = null,
-    Object? shipping = freezed,
     Object? status = null,
+    Object? shipping = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -90,14 +88,14 @@ class _$SmartContractCopyWithImpl<$Res, $Val extends SmartContract>
           ? _value.contractValue
           : contractValue // ignore: cast_nullable_to_non_nullable
               as double,
-      shipping: freezed == shipping
-          ? _value.shipping
-          : shipping // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as SmartContractStatus,
+      shipping: freezed == shipping
+          ? _value.shipping
+          : shipping // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ) as $Val);
   }
 
@@ -131,8 +129,8 @@ abstract class _$$_SmartContractCopyWith<$Res>
       User contractCreator,
       User contractExecutor,
       double contractValue,
-      Map<String, dynamic>? shipping,
-      SmartContractStatus status});
+      SmartContractStatus status,
+      Map<String, dynamic>? shipping});
 
   @override
   $UserCopyWith<$Res> get contractCreator;
@@ -155,8 +153,8 @@ class __$$_SmartContractCopyWithImpl<$Res>
     Object? contractCreator = null,
     Object? contractExecutor = null,
     Object? contractValue = null,
-    Object? shipping = freezed,
     Object? status = null,
+    Object? shipping = freezed,
   }) {
     return _then(_$_SmartContract(
       id: null == id
@@ -175,14 +173,14 @@ class __$$_SmartContractCopyWithImpl<$Res>
           ? _value.contractValue
           : contractValue // ignore: cast_nullable_to_non_nullable
               as double,
-      shipping: freezed == shipping
-          ? _value._shipping
-          : shipping // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as SmartContractStatus,
+      shipping: freezed == shipping
+          ? _value._shipping
+          : shipping // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -195,8 +193,8 @@ class _$_SmartContract implements _SmartContract {
       required this.contractCreator,
       required this.contractExecutor,
       required this.contractValue,
-      final Map<String, dynamic>? shipping,
-      required this.status})
+      required this.status,
+      final Map<String, dynamic>? shipping})
       : _shipping = shipping;
 
   factory _$_SmartContract.fromJson(Map<String, dynamic> json) =>
@@ -210,6 +208,8 @@ class _$_SmartContract implements _SmartContract {
   final User contractExecutor;
   @override
   final double contractValue;
+  @override
+  final SmartContractStatus status;
   final Map<String, dynamic>? _shipping;
   @override
   Map<String, dynamic>? get shipping {
@@ -220,14 +220,9 @@ class _$_SmartContract implements _SmartContract {
     return EqualUnmodifiableMapView(value);
   }
 
-// required DateTime startDate,
-// required DateTime expirationDate,
-  @override
-  final SmartContractStatus status;
-
   @override
   String toString() {
-    return 'SmartContract(id: $id, contractCreator: $contractCreator, contractExecutor: $contractExecutor, contractValue: $contractValue, shipping: $shipping, status: $status)';
+    return 'SmartContract(id: $id, contractCreator: $contractCreator, contractExecutor: $contractExecutor, contractValue: $contractValue, status: $status, shipping: $shipping)';
   }
 
   @override
@@ -242,8 +237,8 @@ class _$_SmartContract implements _SmartContract {
                 other.contractExecutor == contractExecutor) &&
             (identical(other.contractValue, contractValue) ||
                 other.contractValue == contractValue) &&
-            const DeepCollectionEquality().equals(other._shipping, _shipping) &&
-            (identical(other.status, status) || other.status == status));
+            (identical(other.status, status) || other.status == status) &&
+            const DeepCollectionEquality().equals(other._shipping, _shipping));
   }
 
   @JsonKey(ignore: true)
@@ -254,8 +249,8 @@ class _$_SmartContract implements _SmartContract {
       contractCreator,
       contractExecutor,
       contractValue,
-      const DeepCollectionEquality().hash(_shipping),
-      status);
+      status,
+      const DeepCollectionEquality().hash(_shipping));
 
   @JsonKey(ignore: true)
   @override
@@ -277,8 +272,8 @@ abstract class _SmartContract implements SmartContract {
       required final User contractCreator,
       required final User contractExecutor,
       required final double contractValue,
-      final Map<String, dynamic>? shipping,
-      required final SmartContractStatus status}) = _$_SmartContract;
+      required final SmartContractStatus status,
+      final Map<String, dynamic>? shipping}) = _$_SmartContract;
 
   factory _SmartContract.fromJson(Map<String, dynamic> json) =
       _$_SmartContract.fromJson;
@@ -292,10 +287,9 @@ abstract class _SmartContract implements SmartContract {
   @override
   double get contractValue;
   @override
-  Map<String, dynamic>? get shipping;
-  @override // required DateTime startDate,
-// required DateTime expirationDate,
   SmartContractStatus get status;
+  @override
+  Map<String, dynamic>? get shipping;
   @override
   @JsonKey(ignore: true)
   _$$_SmartContractCopyWith<_$_SmartContract> get copyWith =>

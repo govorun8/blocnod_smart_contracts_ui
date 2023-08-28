@@ -31,6 +31,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Механизм арбитража не выбран"),
         "arrival_date": MessageLookupByLibrary.simpleMessage("Дата прибытия"),
         "cargo_weight": MessageLookupByLibrary.simpleMessage("Вес груза"),
+        "conract_confirmation":
+            MessageLookupByLibrary.simpleMessage("Подтверждение контракта"),
         "contractor_not_selected":
             MessageLookupByLibrary.simpleMessage("Контрагент не выбран"),
         "court": MessageLookupByLibrary.simpleMessage("Суд"),

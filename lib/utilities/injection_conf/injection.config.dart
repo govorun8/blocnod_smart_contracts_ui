@@ -9,16 +9,18 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:blocnod_smart_contracts_ui/generated/l10n.dart' as _i7;
+import 'package:blocnod_smart_contracts_ui/generated/l10n.dart' as _i8;
 import 'package:blocnod_smart_contracts_ui/utilities/controllers/authentification_controller.dart'
     as _i3;
+import 'package:blocnod_smart_contracts_ui/utilities/controllers/contracts_controller.dart'
+    as _i5;
 import 'package:blocnod_smart_contracts_ui/utilities/injection_conf/injection_module.dart'
-    as _i8;
+    as _i9;
 import 'package:blocnod_smart_contracts_ui/utilities/repositories/authentification_repository.dart'
     as _i4;
 import 'package:blocnod_smart_contracts_ui/utilities/repositories/contracts_repository.dart'
-    as _i5;
-import 'package:dio/dio.dart' as _i6;
+    as _i6;
+import 'package:dio/dio.dart' as _i7;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
@@ -38,11 +40,12 @@ extension GetItInjectableX on _i1.GetIt {
         _i3.AuthentificationController());
     gh.singleton<_i4.AuthentificationRepository>(
         _i4.AuthentificationRepository());
-    gh.singleton<_i5.ContractsRepository>(_i5.ContractsRepository());
-    gh.lazySingleton<_i6.Dio>(() => serviceModule.dio);
-    gh.singleton<_i7.S>(serviceModule.s);
+    gh.singleton<_i5.ContractsController>(_i5.ContractsController());
+    gh.singleton<_i6.ContractsRepository>(_i6.ContractsRepository());
+    gh.lazySingleton<_i7.Dio>(() => serviceModule.dio);
+    gh.singleton<_i8.S>(serviceModule.s);
     return this;
   }
 }
 
-class _$ServiceModule extends _i8.ServiceModule {}
+class _$ServiceModule extends _i9.ServiceModule {}

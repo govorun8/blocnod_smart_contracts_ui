@@ -39,5 +39,6 @@
     "prepayment": "Prepayment",
     "payment_after": "Payment after delivery",
     "prepayment_amount": "Prepayment amount",
-    "hint_prepayment_amount": "Enter prepayment amount"
+    "hint_prepayment_amount": "Enter prepayment amount",
+    "conract_confirmation": "Contract confirmation"
 }

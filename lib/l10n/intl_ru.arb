@@ -39,5 +39,6 @@
     "prepayment": "Предоплата",
     "payment_after": "Оплата по факту",
     "prepayment_amount": "Размер предоплаты",
-    "hint_prepayment_amount": "Введите размер предоплаты"
+    "hint_prepayment_amount": "Введите размер предоплаты",
+    "conract_confirmation": "Подтверждение контракта"
 }

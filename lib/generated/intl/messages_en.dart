@@ -31,6 +31,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Arbitration mechanism not selected"),
         "arrival_date": MessageLookupByLibrary.simpleMessage("Arrival date"),
         "cargo_weight": MessageLookupByLibrary.simpleMessage("Cargo weight"),
+        "conract_confirmation":
+            MessageLookupByLibrary.simpleMessage("Contract confirmation"),
         "contractor_not_selected":
             MessageLookupByLibrary.simpleMessage("Contructor not selected"),
         "court": MessageLookupByLibrary.simpleMessage("Court"),

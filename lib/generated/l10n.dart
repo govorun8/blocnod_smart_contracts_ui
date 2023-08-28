@@ -459,6 +459,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Contract confirmation`
+  String get conract_confirmation {
+    return Intl.message(
+      'Contract confirmation',
+      name: 'conract_confirmation',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
