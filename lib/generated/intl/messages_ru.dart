@@ -22,11 +22,73 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "address_hint":
+            MessageLookupByLibrary.simpleMessage("Город, улица, дом..."),
+        "arbitration_mechanism":
+            MessageLookupByLibrary.simpleMessage("Механизм арбитража"),
+        "arbitration_mechanism_not_selected":
+            MessageLookupByLibrary.simpleMessage(
+                "Механизм арбитража не выбран"),
+        "arrival_date": MessageLookupByLibrary.simpleMessage("Дата прибытия"),
+        "cargo_weight": MessageLookupByLibrary.simpleMessage("Вес груза"),
+        "contractor_not_selected":
+            MessageLookupByLibrary.simpleMessage("Контрагент не выбран"),
+        "court": MessageLookupByLibrary.simpleMessage("Суд"),
+        "departure_point":
+            MessageLookupByLibrary.simpleMessage("Пункт отправления"),
+        "destination_point":
+            MessageLookupByLibrary.simpleMessage("Пункт назначения"),
+        "driver_name": MessageLookupByLibrary.simpleMessage("ФИО водителя"),
+        "driver_number":
+            MessageLookupByLibrary.simpleMessage("Контакт водителя"),
+        "enter_cargo_weight":
+            MessageLookupByLibrary.simpleMessage("Введите вес груза"),
+        "enter_own_arbitration_mechanism": MessageLookupByLibrary.simpleMessage(
+            "Введите свой механизм арбитража"),
         "fonts_test": MessageLookupByLibrary.simpleMessage("Тест шрифтов"),
+        "hint_departure_point":
+            MessageLookupByLibrary.simpleMessage("Адрес пункта отправления"),
+        "hint_destination_point":
+            MessageLookupByLibrary.simpleMessage("Адрес пункта назначения"),
+        "hint_driver_name":
+            MessageLookupByLibrary.simpleMessage("Введите ФИО водителя"),
+        "hint_driver_number":
+            MessageLookupByLibrary.simpleMessage("Введите контакт водителя"),
+        "hint_insurance":
+            MessageLookupByLibrary.simpleMessage("Введите страховку"),
+        "hint_prepayment_amount":
+            MessageLookupByLibrary.simpleMessage("Введите размер предоплаты"),
         "home_page_title":
             MessageLookupByLibrary.simpleMessage("Домашняя страница"),
+        "insurance": MessageLookupByLibrary.simpleMessage("Страховка"),
         "money_page_title":
             MessageLookupByLibrary.simpleMessage("Денежная страница"),
-        "sign_in": MessageLookupByLibrary.simpleMessage("Войти")
+        "new_smart_contract":
+            MessageLookupByLibrary.simpleMessage("Новый смарт контракт"),
+        "own_version": MessageLookupByLibrary.simpleMessage("Свой вариант"),
+        "payment_after":
+            MessageLookupByLibrary.simpleMessage("Оплата по факту"),
+        "payment_type": MessageLookupByLibrary.simpleMessage("Тип оплаты"),
+        "penalty": MessageLookupByLibrary.simpleMessage("Штраф"),
+        "prepayment": MessageLookupByLibrary.simpleMessage("Предоплата"),
+        "prepayment_amount":
+            MessageLookupByLibrary.simpleMessage("Размер предоплаты"),
+        "rent": MessageLookupByLibrary.simpleMessage("Аренда"),
+        "rental_period": MessageLookupByLibrary.simpleMessage("Срок аренды"),
+        "select_contract_type":
+            MessageLookupByLibrary.simpleMessage("Выберите тип контракта"),
+        "select_contractor":
+            MessageLookupByLibrary.simpleMessage("Выберите контрагента"),
+        "select_payment_type":
+            MessageLookupByLibrary.simpleMessage("Выберите тип оплаты"),
+        "shipment_date": MessageLookupByLibrary.simpleMessage("Дата отгрузки"),
+        "sign_in": MessageLookupByLibrary.simpleMessage("Войти"),
+        "smart_contract_page_title":
+            MessageLookupByLibrary.simpleMessage("Создание смарт контракта"),
+        "transportation":
+            MessageLookupByLibrary.simpleMessage("Транспортировка"),
+        "type_not_selected":
+            MessageLookupByLibrary.simpleMessage("Тип не выбран"),
+        "your_address": MessageLookupByLibrary.simpleMessage("Ваш адрес")
       };
 }

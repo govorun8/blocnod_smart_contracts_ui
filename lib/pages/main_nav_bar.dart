@@ -1,12 +1,17 @@
 import 'package:blocnod_smart_contracts_ui/components/custom_app_bar.dart';
-import 'package:blocnod_smart_contracts_ui/components/custom_bottom_nav_bar.dart';
-import 'package:blocnod_smart_contracts_ui/pages/home_page/home_page_view.dart';
-import 'package:blocnod_smart_contracts_ui/pages/money_page/money_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 
 class MainNavigationBar extends StatefulWidget {
-  const MainNavigationBar({super.key});
+  const MainNavigationBar({
+    super.key,
+    required this.location,
+    required this.child,
+  });
 
+  final String location;
+  final Widget child;
   @override
   State<MainNavigationBar> createState() => MainNavigationBarState();
 }
@@ -29,8 +34,39 @@ class MainNavigationBarState extends State<MainNavigationBar> {
     super.initState();
   }
 
+  static List<CustomNavBarItem> tabs = [
+    CustomNavBarItem(
+      icon: SvgPicture.asset(
+        'assets/bottom_bar/home.svg',
+        width: 50,
+        height: 50,
+      ),
+      initialLocation: '/',
+      label: 'home',
+    ),
+    CustomNavBarItem(
+      icon: SvgPicture.asset(
+        'assets/bottom_bar/settings.svg',
+        width: 50,
+        height: 50,
+      ),
+      initialLocation: '/money',
+      label: 'money',
+    ),
+  ];
   @override
   Widget build(BuildContext context) {
+    late int currentIndex;
+    List<String> splitedPath = widget.location.split('/');
+    switch (splitedPath[1]) {
+      case (''):
+        currentIndex = 0;
+        break;
+      case ('money'):
+        currentIndex = 1;
+        break;
+    }
+
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size(
@@ -38,18 +74,49 @@ class MainNavigationBarState extends State<MainNavigationBar> {
           50,
         ),
         child: CustomAppBar(
-          selectedIndex: selectedIndex,
+          location: widget.location,
         ),
       ),
-      body: PageView(
-        controller: pageController,
-        children: [HomePageView(), MoneyPageView()],
+      body: SafeArea(
+        child: widget.child,
       ),
-      bottomNavigationBar: CustomBottomNavBar(
-          selectedIndex: selectedIndex,
-          onTap: (value) {
-            selectedIndex.value = value;
-          }),
+      bottomNavigationBar: BottomNavigationBar(
+        showUnselectedLabels: false,
+        showSelectedLabels: false,
+        enableFeedback: false,
+        type: BottomNavigationBarType.fixed,
+        onTap: (int index) {
+          _goToOtherTab(context, index, currentIndex);
+        },
+        backgroundColor: Theme.of(context).splashColor,
+        currentIndex: currentIndex,
+        items: tabs,
+      ),
     );
   }
+
+  _goToOtherTab(BuildContext context, int index, int currentIndex) {
+    if (index == currentIndex) return;
+    GoRouter router = GoRouter.of(context);
+    String location = tabs[index].initialLocation;
+
+    setState(() {
+      currentIndex = index;
+    });
+    router.go(location);
+  }
+}
+
+class CustomNavBarItem extends BottomNavigationBarItem {
+  final String initialLocation;
+  const CustomNavBarItem({
+    required this.initialLocation,
+    required Widget icon,
+    String? label,
+    Widget? activeIcon,
+  }) : super(
+          icon: icon,
+          label: label,
+          activeIcon: activeIcon ?? icon,
+        );
 }
