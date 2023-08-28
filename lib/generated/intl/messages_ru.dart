@@ -24,12 +24,20 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "address_hint":
             MessageLookupByLibrary.simpleMessage("Город, улица, дом..."),
+        "arbitration_mechanism":
+            MessageLookupByLibrary.simpleMessage("Механизм арбитража"),
+        "arbitration_mechanism_not_selected":
+            MessageLookupByLibrary.simpleMessage(
+                "Механизм арбитража не выбран"),
         "contractor_not_selected":
             MessageLookupByLibrary.simpleMessage("Контрагент не выбран"),
+        "court": MessageLookupByLibrary.simpleMessage("Суд"),
         "delivery_point":
             MessageLookupByLibrary.simpleMessage("Выберите пункт выдачи"),
         "delivery_point_hint":
             MessageLookupByLibrary.simpleMessage("Пункт не выбран"),
+        "enter_own_arbitration_mechanism": MessageLookupByLibrary.simpleMessage(
+            "Введите свой механизм арбитража"),
         "fonts_test": MessageLookupByLibrary.simpleMessage("Тест шрифтов"),
         "home_page_title":
             MessageLookupByLibrary.simpleMessage("Домашняя страница"),
@@ -37,6 +45,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Денежная страница"),
         "new_smart_contract":
             MessageLookupByLibrary.simpleMessage("Новый смарт контракт"),
+        "own_version": MessageLookupByLibrary.simpleMessage("Свой вариант"),
+        "penalty": MessageLookupByLibrary.simpleMessage("Штраф"),
         "rent": MessageLookupByLibrary.simpleMessage("Аренда"),
         "rental_period": MessageLookupByLibrary.simpleMessage("Срок аренды"),
         "select_contract_type":

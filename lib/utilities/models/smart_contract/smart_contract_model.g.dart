@@ -14,10 +14,8 @@ _$_SmartContract _$$_SmartContractFromJson(Map<String, dynamic> json) =>
       contractExecutor:
           User.fromJson(json['contractExecutor'] as Map<String, dynamic>),
       contractValue: (json['contractValue'] as num).toDouble(),
-      startDate: DateTime.parse(json['startDate'] as String),
-      expirationDate: DateTime.parse(json['expirationDate'] as String),
+      shipping: json['shipping'] as Map<String, dynamic>?,
       status: $enumDecode(_$SmartContractStatusEnumMap, json['status']),
-      type: $enumDecode(_$SmartContractTypeEnumMap, json['type']),
     );
 
 Map<String, dynamic> _$$_SmartContractToJson(_$_SmartContract instance) =>
@@ -26,10 +24,8 @@ Map<String, dynamic> _$$_SmartContractToJson(_$_SmartContract instance) =>
       'contractCreator': instance.contractCreator,
       'contractExecutor': instance.contractExecutor,
       'contractValue': instance.contractValue,
-      'startDate': instance.startDate.toIso8601String(),
-      'expirationDate': instance.expirationDate.toIso8601String(),
+      'shipping': instance.shipping,
       'status': _$SmartContractStatusEnumMap[instance.status]!,
-      'type': _$SmartContractTypeEnumMap[instance.type]!,
     };
 
 const _$SmartContractStatusEnumMap = {
@@ -37,9 +33,4 @@ const _$SmartContractStatusEnumMap = {
   SmartContractStatus.inProgress: 'inProgress',
   SmartContractStatus.done: 'done',
   SmartContractStatus.error: 'error',
-};
-
-const _$SmartContractTypeEnumMap = {
-  SmartContractType.rent: 'rent',
-  SmartContractType.transportation: 'transportation',
 };

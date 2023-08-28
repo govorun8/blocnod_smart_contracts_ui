@@ -22,9 +22,16 @@ class SmartContractCreationCubit extends Cubit<SmartContractCreationState> {
       uuid.v4(),
     ];
 
+    List<String> arbitrationMechanismList = [
+      translate.court,
+      translate.penalty,
+      translate.own_version
+    ];
+
     emit(SmartContractCreationState(
       typeList: dropdownValues,
       contructorList: contructorIdList,
+      arbitrationMechanismList: arbitrationMechanismList,
     ));
   }
 
@@ -43,7 +50,31 @@ class SmartContractCreationCubit extends Cubit<SmartContractCreationState> {
     emit(state.copyWith(address: address));
   }
 
-  Future<void> selectedDateTimeRange(DateTimeRange range) async {
+  Future<void> selectDateTimeRange(DateTimeRange range) async {
     emit(state.copyWith(selectedTimeInterval: range));
+  }
+
+  Future<void> changeRentalPrice(String price) async {
+    emit(state.copyWith(rentalPrice: price));
+  }
+
+  Future<void> changeDeposit(String deposit) async {
+    emit(state.copyWith(deposit: deposit));
+  }
+
+  Future<void> selectDateTime(DateTime dateTime) async {
+    emit(state.copyWith(selectedDateTime: dateTime));
+  }
+
+  Future<void> changeUtilitiesPayment(bool utilitiesPayment) async {
+    emit(state.copyWith(selectedUtilitiesPayment: utilitiesPayment));
+  }
+
+  Future<void> changePetsAllowed(bool petsAllowed) async {
+    emit(state.copyWith(selectedPetsAllowed: petsAllowed));
+  }
+
+  Future<void> selectArbitrationMechanism(String arbitrationMechanism) async {
+    emit(state.copyWith(selectedArbitrationMechanism: arbitrationMechanism));
   }
 }

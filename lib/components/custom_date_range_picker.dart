@@ -2,8 +2,8 @@ import 'package:blocnod_smart_contracts_ui/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class CustomDatePicker extends StatelessWidget {
-  const CustomDatePicker({
+class CustomDateRangePicker extends StatelessWidget {
+  const CustomDateRangePicker({
     super.key,
     required this.title,
     required this.choosedDateTime,
@@ -13,8 +13,8 @@ class CustomDatePicker extends StatelessWidget {
   });
   final String title;
 
-  final DateTime choosedDateTime;
-  final void Function(DateTime? selectedDate) onChangedDate;
+  final DateTimeRange choosedDateTime;
+  final void Function(DateTimeRange? selectedDate) onChangedDate;
   final S translate;
   final ThemeData theme;
 
@@ -33,7 +33,7 @@ class CustomDatePicker extends StatelessWidget {
         ),
         GestureDetector(
           onTapUp: (details) {
-            pickDate(context, choosedDateTime);
+            pickDateRange(context, choosedDateTime);
           },
           child: Container(
             height: 50,
@@ -48,7 +48,7 @@ class CustomDatePicker extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
             ),
             child: Text(
-              DateFormat('dd-MM-yyyy').format(choosedDateTime).toString(),
+              '${DateFormat('dd-MM-yyyy').format(choosedDateTime.start).toString()}  -  ${DateFormat('dd-MM-yyyy').format(choosedDateTime.end).toString()}',
               style: theme.textTheme.bodyMedium,
             ),
           ),
@@ -57,16 +57,16 @@ class CustomDatePicker extends StatelessWidget {
     );
   }
 
-  Future pickDate(
+  Future pickDateRange(
     BuildContext context,
-    DateTime choosedDateTime,
+    DateTimeRange choosedDateTime,
   ) async {
-    DateTime? newDate = await showDatePicker(
+    DateTimeRange? newDateRange = await showDateRangePicker(
       context: context,
-      initialDate: choosedDateTime,
+      initialDateRange: choosedDateTime,
       firstDate: DateTime(2023),
       lastDate: DateTime(2030),
     );
-    onChangedDate(newDate);
+    onChangedDate(newDateRange);
   }
 }

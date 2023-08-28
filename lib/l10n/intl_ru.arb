@@ -15,5 +15,11 @@
     "address_hint": "Город, улица, дом...",
     "delivery_point": "Выберите пункт выдачи",
     "delivery_point_hint": "Пункт не выбран",
-    "rental_period": "Срок аренды"
+    "rental_period": "Срок аренды",
+    "court": "Суд",
+    "penalty": "Штраф",
+    "own_version": "Свой вариант",
+    "arbitration_mechanism": "Механизм арбитража",
+    "arbitration_mechanism_not_selected": "Механизм арбитража не выбран",
+    "enter_own_arbitration_mechanism": "Введите свой механизм арбитража"
 }

@@ -15,5 +15,11 @@
     "address_hint": "City, street, house...",
     "delivery_point": "Select the delivery point",
     "delivery_point_hint": "Point not selected",
-    "rental_period": "Rental period"
+    "rental_period": "Rental period",
+    "court": "Court",
+    "penalty": "Penalty",
+    "own_version": "Your own version",
+    "arbitration_mechanism": "Arbitration mechanism",
+    "arbitration_mechanism_not_selected": "Arbitration mechanism not selected",
+    "enter_own_arbitration_mechanism": "Enter own arbitration mechanism"
 }

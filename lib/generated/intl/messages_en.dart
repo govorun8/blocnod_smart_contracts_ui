@@ -24,17 +24,27 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "address_hint":
             MessageLookupByLibrary.simpleMessage("City, street, house..."),
+        "arbitration_mechanism":
+            MessageLookupByLibrary.simpleMessage("Arbitration mechanism"),
+        "arbitration_mechanism_not_selected":
+            MessageLookupByLibrary.simpleMessage(
+                "Arbitration mechanism not selected"),
         "contractor_not_selected":
             MessageLookupByLibrary.simpleMessage("Contructor not selected"),
+        "court": MessageLookupByLibrary.simpleMessage("Court"),
         "delivery_point":
             MessageLookupByLibrary.simpleMessage("Select the delivery point"),
         "delivery_point_hint":
             MessageLookupByLibrary.simpleMessage("Point not selected"),
+        "enter_own_arbitration_mechanism": MessageLookupByLibrary.simpleMessage(
+            "Enter own arbitration mechanism"),
         "fonts_test": MessageLookupByLibrary.simpleMessage("Fonts test"),
         "home_page_title": MessageLookupByLibrary.simpleMessage("Home page"),
         "money_page_title": MessageLookupByLibrary.simpleMessage("Money page"),
         "new_smart_contract":
             MessageLookupByLibrary.simpleMessage("New smart contract"),
+        "own_version": MessageLookupByLibrary.simpleMessage("Your own version"),
+        "penalty": MessageLookupByLibrary.simpleMessage("Penalty"),
         "rent": MessageLookupByLibrary.simpleMessage("Rent"),
         "rental_period": MessageLookupByLibrary.simpleMessage("Rental period"),
         "select_contract_type":

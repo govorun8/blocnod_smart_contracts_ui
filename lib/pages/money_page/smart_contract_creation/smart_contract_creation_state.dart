@@ -10,6 +10,13 @@ class SmartContractCreationState extends Equatable {
   final List<String>? pointsList;
   final String? selectedPoint;
   final DateTimeRange? selectedTimeInterval;
+  final String? rentalPrice;
+  final String? deposit;
+  final DateTime? selectedDateTime;
+  final bool? selectedUtilitiesPayment;
+  final bool? selectedPetsAllowed;
+  final List<String>? arbitrationMechanismList;
+  final String? selectedArbitrationMechanism;
 
   const SmartContractCreationState({
     this.typeList,
@@ -20,6 +27,13 @@ class SmartContractCreationState extends Equatable {
     this.pointsList,
     this.selectedPoint,
     this.selectedTimeInterval,
+    this.rentalPrice,
+    this.deposit,
+    this.selectedDateTime,
+    this.selectedUtilitiesPayment,
+    this.selectedPetsAllowed,
+    this.arbitrationMechanismList,
+    this.selectedArbitrationMechanism,
   });
 
   SmartContractCreationState copyWith({
@@ -31,6 +45,13 @@ class SmartContractCreationState extends Equatable {
     List<String>? pointsList,
     String? selectedPoint,
     DateTimeRange? selectedTimeInterval,
+    String? rentalPrice,
+    String? deposit,
+    DateTime? selectedDateTime,
+    bool? selectedUtilitiesPayment,
+    bool? selectedPetsAllowed,
+    List<String>? arbitrationMechanismList,
+    String? selectedArbitrationMechanism,
   }) {
     return SmartContractCreationState(
       typeList: typeList ?? this.typeList,
@@ -41,6 +62,16 @@ class SmartContractCreationState extends Equatable {
       pointsList: pointsList ?? this.pointsList,
       selectedPoint: selectedPoint ?? this.selectedPoint,
       selectedTimeInterval: selectedTimeInterval ?? this.selectedTimeInterval,
+      rentalPrice: rentalPrice ?? this.rentalPrice,
+      deposit: deposit ?? this.deposit,
+      selectedDateTime: selectedDateTime ?? this.selectedDateTime,
+      selectedUtilitiesPayment:
+          selectedUtilitiesPayment ?? this.selectedUtilitiesPayment,
+      selectedPetsAllowed: selectedPetsAllowed ?? this.selectedPetsAllowed,
+      arbitrationMechanismList:
+          arbitrationMechanismList ?? this.arbitrationMechanismList,
+      selectedArbitrationMechanism:
+          selectedArbitrationMechanism ?? this.selectedArbitrationMechanism,
     );
   }
 
@@ -54,5 +85,12 @@ class SmartContractCreationState extends Equatable {
         selectedPoint,
         pointsList,
         selectedTimeInterval,
+        rentalPrice,
+        deposit,
+        selectedDateTime,
+        selectedUtilitiesPayment,
+        selectedPetsAllowed,
+        arbitrationMechanismList,
+        selectedArbitrationMechanism,
       ];
 }

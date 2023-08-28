@@ -3,6 +3,7 @@ import 'package:blocnod_smart_contracts_ui/pages/main_nav_bar.dart';
 import 'package:blocnod_smart_contracts_ui/pages/money_page/money_page.dart';
 import 'package:blocnod_smart_contracts_ui/pages/money_page/smart_contract_creation/smart_contract_creation_view.dart';
 import 'package:blocnod_smart_contracts_ui/utilities/injection_conf/injection.dart';
+import 'package:blocnod_smart_contracts_ui/utilities/repositories/contracts_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/date_symbol_data_local.dart';
@@ -15,6 +16,7 @@ class InitializationController {
     WidgetsFlutterBinding.ensureInitialized();
     configureDependencies();
     initializeDateFormatting();
+    getIt<ContractsRepository>().init();
   }
 
   GoRouter initializeRouter() {

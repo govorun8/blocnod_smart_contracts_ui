@@ -7,12 +7,14 @@ class CustomDropdown extends StatelessWidget {
     required this.hint,
     required this.dropdownValues,
     required this.onChanged,
+    // this.needTextField,
   });
 
   final String title;
   final String hint;
   final List<String> dropdownValues;
   final void Function(String?) onChanged;
+  // final bool? needTextField;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +33,7 @@ class CustomDropdown extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            showDropdownDialog(context, dropdownValues, theme, globalKey);
+            showDropdownDialog(context, theme, globalKey);
           },
           child: Container(
             key: globalKey,
@@ -60,7 +62,6 @@ class CustomDropdown extends StatelessWidget {
 
   Future<void> showDropdownDialog(
     BuildContext context,
-    List<String> dropdownValues,
     ThemeData theme,
     GlobalKey key,
   ) async {
@@ -68,6 +69,8 @@ class CustomDropdown extends StatelessWidget {
         key.currentContext?.findRenderObject() as RenderBox;
     final Size size = renderBox.size;
     final Offset position = renderBox.localToGlobal(Offset.zero);
+    final double height = 50 * dropdownValues.length.toDouble();
+    final double bodyHeight = MediaQuery.of(context).size.height - 100;
 
     final String? selectedValue = await showGeneralDialog(
       context: context,
@@ -79,12 +82,15 @@ class CustomDropdown extends StatelessWidget {
           children: [
             Positioned(
               left: position.dx,
-              top: position.dy - 10,
+              top: position.dy + height > bodyHeight
+                  ? position.dy - height - 65
+                  : position.dy - 5,
               width: size.width,
-              height: 50 * dropdownValues.length.toDouble() * animation.value,
+              height: height * animation.value,
               child: DropdownDialogConstructor(
                 theme: theme,
                 dropdownValues: dropdownValues,
+                // needTextField: needTextField ?? false,
               ),
             ),
           ],
@@ -100,10 +106,15 @@ class CustomDropdown extends StatelessWidget {
 }
 
 class DropdownDialogConstructor extends StatelessWidget {
-  const DropdownDialogConstructor(
-      {super.key, required this.dropdownValues, required this.theme});
+  const DropdownDialogConstructor({
+    super.key,
+    required this.dropdownValues,
+    required this.theme,
+    // required this.needTextField,
+  });
   final List<String> dropdownValues;
   final ThemeData theme;
+  // final bool needTextField;
 
   @override
   Widget build(BuildContext context) {
@@ -121,40 +132,44 @@ class DropdownDialogConstructor extends StatelessWidget {
         physics: const NeverScrollableScrollPhysics(),
         itemCount: dropdownValues.length,
         itemBuilder: (context, index) {
-          return GestureDetector(
-            onTap: () {
-              Navigator.pop(context, dropdownValues[index]);
-            },
-            child: AbsorbPointer(
-              child: SizedBox(
-                height: 50,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    const Spacer(),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 10),
-                      child: Text(
-                        dropdownValues[index],
-                        style: theme.textTheme.bodyMedium,
-                      ),
-                    ),
-                    const Spacer(),
-                    index != dropdownValues.length - 1
-                        ? Divider(
-                            color: theme.primaryColor,
-                            thickness: 0.3,
-                            height: 0.3,
-                          )
-                        : const SizedBox.shrink(),
-                  ],
+          return dropdownTileBuilder(context, index);
+        },
+      ),
+    );
+  }
+
+  Widget dropdownTileBuilder(BuildContext context, int index) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.pop(context, dropdownValues[index]);
+      },
+      child: AbsorbPointer(
+        child: SizedBox(
+          height: 50,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Spacer(),
+              Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: Text(
+                  dropdownValues[index],
+                  style: theme.textTheme.bodyMedium,
                 ),
               ),
-            ),
-          );
-        },
+              const Spacer(),
+              index != dropdownValues.length - 1
+                  ? Divider(
+                      color: theme.primaryColor,
+                      thickness: 0.3,
+                      height: 0.3,
+                    )
+                  : const SizedBox.shrink(),
+            ],
+          ),
+        ),
       ),
     );
   }

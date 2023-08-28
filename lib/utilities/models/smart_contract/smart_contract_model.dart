@@ -12,10 +12,11 @@ class SmartContract with _$SmartContract {
     required User contractCreator,
     required User contractExecutor,
     required double contractValue,
-    required DateTime startDate,
-    required DateTime expirationDate,
+    Map<String, dynamic>? shipping,
+    // required DateTime startDate,
+    // required DateTime expirationDate,
     required SmartContractStatus status,
-    required SmartContractType type,
+    // required SmartContractType type,
   }) = _SmartContract;
 
   factory SmartContract.fromJson(Map<String, Object?> json) =>

@@ -219,6 +219,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Court`
+  String get court {
+    return Intl.message(
+      'Court',
+      name: 'court',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Penalty`
+  String get penalty {
+    return Intl.message(
+      'Penalty',
+      name: 'penalty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your own version`
+  String get own_version {
+    return Intl.message(
+      'Your own version',
+      name: 'own_version',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Arbitration mechanism`
+  String get arbitration_mechanism {
+    return Intl.message(
+      'Arbitration mechanism',
+      name: 'arbitration_mechanism',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Arbitration mechanism not selected`
+  String get arbitration_mechanism_not_selected {
+    return Intl.message(
+      'Arbitration mechanism not selected',
+      name: 'arbitration_mechanism_not_selected',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter own arbitration mechanism`
+  String get enter_own_arbitration_mechanism {
+    return Intl.message(
+      'Enter own arbitration mechanism',
+      name: 'enter_own_arbitration_mechanism',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
