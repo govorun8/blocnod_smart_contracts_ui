@@ -20,8 +20,11 @@ class ContractsRepository {
           .map<SmartContract>(
               (smartContract) => SmartContract.fromJson(smartContract))
           .toList();
-    } on DioException catch (e, stackTrace) {
-      throw ResponseStatus.failed;
+    } on DioException catch (e) {
+      if (e.response!.statusCode != 200) {
+        throw ResponseStatus.failed;
+      }
     }
+    return null;
   }
 }

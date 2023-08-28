@@ -17,24 +17,46 @@ class SmartContractCreationState extends Equatable {
   final bool? selectedPetsAllowed;
   final List<String>? arbitrationMechanismList;
   final String? selectedArbitrationMechanism;
+  //
+  final String? selectedDeparturePoint;
+  final String? selectedDestinationPoint;
+  final String? cargoWeight;
+  final DateTime? arrivalDate;
+  final DateTime? shipmentDate;
+  final String? insurance;
+  final String? driverName;
+  final String? driverContact;
+  final String? selectedPaymentType;
+  final List<String>? listPaymentTypes;
+  final String? prepaymentAmount;
 
-  const SmartContractCreationState({
-    this.typeList,
-    this.selectedType,
-    this.contructorList,
-    this.selectedContructor,
-    this.address,
-    this.pointsList,
-    this.selectedPoint,
-    this.selectedTimeInterval,
-    this.rentalPrice,
-    this.deposit,
-    this.selectedDateTime,
-    this.selectedUtilitiesPayment,
-    this.selectedPetsAllowed,
-    this.arbitrationMechanismList,
-    this.selectedArbitrationMechanism,
-  });
+  const SmartContractCreationState(
+      {this.typeList,
+      this.selectedType,
+      this.contructorList,
+      this.selectedContructor,
+      this.address,
+      this.pointsList,
+      this.selectedPoint,
+      this.selectedTimeInterval,
+      this.rentalPrice,
+      this.deposit,
+      this.selectedDateTime,
+      this.selectedUtilitiesPayment,
+      this.selectedPetsAllowed,
+      this.arbitrationMechanismList,
+      this.selectedArbitrationMechanism,
+      this.selectedDeparturePoint,
+      this.selectedDestinationPoint,
+      this.cargoWeight,
+      this.arrivalDate,
+      this.shipmentDate,
+      this.insurance,
+      this.driverName,
+      this.driverContact,
+      this.selectedPaymentType,
+      this.listPaymentTypes,
+      this.prepaymentAmount});
 
   SmartContractCreationState copyWith({
     List<String>? typeList,
@@ -52,6 +74,17 @@ class SmartContractCreationState extends Equatable {
     bool? selectedPetsAllowed,
     List<String>? arbitrationMechanismList,
     String? selectedArbitrationMechanism,
+    String? selectedDeparturePoint,
+    String? selectedDestinationPoint,
+    String? cargoWeight,
+    DateTime? arrivalDate,
+    DateTime? shipmentDate,
+    String? insurance,
+    String? driverName,
+    String? driverContact,
+    String? selectedPaymentType,
+    List<String>? listPaymentTypes,
+    String? prepaymentAmount,
   }) {
     return SmartContractCreationState(
       typeList: typeList ?? this.typeList,
@@ -72,6 +105,19 @@ class SmartContractCreationState extends Equatable {
           arbitrationMechanismList ?? this.arbitrationMechanismList,
       selectedArbitrationMechanism:
           selectedArbitrationMechanism ?? this.selectedArbitrationMechanism,
+      selectedDeparturePoint:
+          selectedDeparturePoint ?? this.selectedDeparturePoint,
+      selectedDestinationPoint:
+          selectedDestinationPoint ?? this.selectedDestinationPoint,
+      cargoWeight: cargoWeight ?? this.cargoWeight,
+      arrivalDate: arrivalDate ?? this.arrivalDate,
+      shipmentDate: shipmentDate ?? this.shipmentDate,
+      insurance: insurance ?? this.insurance,
+      driverName: driverName ?? this.driverName,
+      driverContact: insurance ?? this.insurance,
+      selectedPaymentType: selectedPaymentType ?? this.selectedPaymentType,
+      listPaymentTypes: listPaymentTypes ?? this.listPaymentTypes,
+      prepaymentAmount: prepaymentAmount ?? this.prepaymentAmount,
     );
   }
 
@@ -92,5 +138,16 @@ class SmartContractCreationState extends Equatable {
         selectedPetsAllowed,
         arbitrationMechanismList,
         selectedArbitrationMechanism,
+        selectedDeparturePoint,
+        selectedDestinationPoint,
+        cargoWeight,
+        arrivalDate,
+        shipmentDate,
+        insurance,
+        driverName,
+        driverContact,
+        selectedPaymentType,
+        listPaymentTypes,
+        prepaymentAmount,
       ];
 }

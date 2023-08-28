@@ -29,28 +29,58 @@ class MessageLookup extends MessageLookupByLibrary {
         "arbitration_mechanism_not_selected":
             MessageLookupByLibrary.simpleMessage(
                 "Arbitration mechanism not selected"),
+        "arrival_date": MessageLookupByLibrary.simpleMessage("Arrival date"),
+        "cargo_weight": MessageLookupByLibrary.simpleMessage("Cargo weight"),
         "contractor_not_selected":
             MessageLookupByLibrary.simpleMessage("Contructor not selected"),
         "court": MessageLookupByLibrary.simpleMessage("Court"),
-        "delivery_point":
-            MessageLookupByLibrary.simpleMessage("Select the delivery point"),
-        "delivery_point_hint":
-            MessageLookupByLibrary.simpleMessage("Point not selected"),
+        "departure_point":
+            MessageLookupByLibrary.simpleMessage("Departure point"),
+        "destination_point":
+            MessageLookupByLibrary.simpleMessage("Destination point"),
+        "driver_name":
+            MessageLookupByLibrary.simpleMessage("Driver\'s full name"),
+        "driver_number":
+            MessageLookupByLibrary.simpleMessage("Driver\'s contact"),
+        "enter_cargo_weight":
+            MessageLookupByLibrary.simpleMessage("Enter cargo weight"),
         "enter_own_arbitration_mechanism": MessageLookupByLibrary.simpleMessage(
             "Enter own arbitration mechanism"),
         "fonts_test": MessageLookupByLibrary.simpleMessage("Fonts test"),
+        "hint_departure_point":
+            MessageLookupByLibrary.simpleMessage("Departure point address"),
+        "hint_destination_point":
+            MessageLookupByLibrary.simpleMessage("Destination address"),
+        "hint_driver_name":
+            MessageLookupByLibrary.simpleMessage("Enter driver\'s full name"),
+        "hint_driver_number":
+            MessageLookupByLibrary.simpleMessage("Enter driver\'s contact"),
+        "hint_insurance":
+            MessageLookupByLibrary.simpleMessage("Enter insurance"),
+        "hint_prepayment_amount":
+            MessageLookupByLibrary.simpleMessage("Enter prepayment amount"),
         "home_page_title": MessageLookupByLibrary.simpleMessage("Home page"),
+        "insurance": MessageLookupByLibrary.simpleMessage("Insurance"),
         "money_page_title": MessageLookupByLibrary.simpleMessage("Money page"),
         "new_smart_contract":
             MessageLookupByLibrary.simpleMessage("New smart contract"),
         "own_version": MessageLookupByLibrary.simpleMessage("Your own version"),
+        "payment_after":
+            MessageLookupByLibrary.simpleMessage("Payment after delivery"),
+        "payment_type": MessageLookupByLibrary.simpleMessage("Payment type"),
         "penalty": MessageLookupByLibrary.simpleMessage("Penalty"),
+        "prepayment": MessageLookupByLibrary.simpleMessage("Prepayment"),
+        "prepayment_amount":
+            MessageLookupByLibrary.simpleMessage("Prepayment amount"),
         "rent": MessageLookupByLibrary.simpleMessage("Rent"),
         "rental_period": MessageLookupByLibrary.simpleMessage("Rental period"),
         "select_contract_type":
             MessageLookupByLibrary.simpleMessage("Select contract type"),
         "select_contractor":
             MessageLookupByLibrary.simpleMessage("Select contructor"),
+        "select_payment_type":
+            MessageLookupByLibrary.simpleMessage("Select payment type"),
+        "shipment_date": MessageLookupByLibrary.simpleMessage("Shipment date"),
         "sign_in": MessageLookupByLibrary.simpleMessage("sign in"),
         "smart_contract_page_title":
             MessageLookupByLibrary.simpleMessage("Smart contract creation"),

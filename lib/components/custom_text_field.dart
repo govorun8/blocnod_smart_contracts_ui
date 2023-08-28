@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 class CustomTextField extends StatefulWidget {
   const CustomTextField({
     super.key,
-    required this.onChanged,
     required this.title,
     required this.hint,
+    required this.onChanged,
     this.text,
   });
 
-  final void Function(String) onChanged;
   final String title;
   final String hint;
+  final void Function(String) onChanged;
   final String? text;
 
   @override
@@ -50,7 +50,13 @@ class CustomTextFieldState extends State<CustomTextField> {
           child: TextField(
             controller: textController,
             focusNode: focusNode,
-            onChanged: widget.onChanged,
+            onSubmitted: widget.onChanged,
+            onTapOutside: (_) {
+              widget.onChanged(textController.text);
+            },
+            onEditingComplete: () {
+              widget.onChanged(textController.text);
+            },
             style: theme.textTheme.bodyMedium,
             decoration: InputDecoration(
               contentPadding: const EdgeInsets.only(top: 5, left: 10),

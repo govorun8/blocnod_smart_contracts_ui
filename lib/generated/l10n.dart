@@ -190,26 +190,6 @@ class S {
     );
   }
 
-  /// `Select the delivery point`
-  String get delivery_point {
-    return Intl.message(
-      'Select the delivery point',
-      name: 'delivery_point',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Point not selected`
-  String get delivery_point_hint {
-    return Intl.message(
-      'Point not selected',
-      name: 'delivery_point_hint',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Rental period`
   String get rental_period {
     return Intl.message(
@@ -275,6 +255,206 @@ class S {
     return Intl.message(
       'Enter own arbitration mechanism',
       name: 'enter_own_arbitration_mechanism',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Departure point`
+  String get departure_point {
+    return Intl.message(
+      'Departure point',
+      name: 'departure_point',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Destination point`
+  String get destination_point {
+    return Intl.message(
+      'Destination point',
+      name: 'destination_point',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Departure point address`
+  String get hint_departure_point {
+    return Intl.message(
+      'Departure point address',
+      name: 'hint_departure_point',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Destination address`
+  String get hint_destination_point {
+    return Intl.message(
+      'Destination address',
+      name: 'hint_destination_point',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cargo weight`
+  String get cargo_weight {
+    return Intl.message(
+      'Cargo weight',
+      name: 'cargo_weight',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter cargo weight`
+  String get enter_cargo_weight {
+    return Intl.message(
+      'Enter cargo weight',
+      name: 'enter_cargo_weight',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Arrival date`
+  String get arrival_date {
+    return Intl.message(
+      'Arrival date',
+      name: 'arrival_date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Shipment date`
+  String get shipment_date {
+    return Intl.message(
+      'Shipment date',
+      name: 'shipment_date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Insurance`
+  String get insurance {
+    return Intl.message(
+      'Insurance',
+      name: 'insurance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter insurance`
+  String get hint_insurance {
+    return Intl.message(
+      'Enter insurance',
+      name: 'hint_insurance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Driver's full name`
+  String get driver_name {
+    return Intl.message(
+      'Driver\'s full name',
+      name: 'driver_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter driver's full name`
+  String get hint_driver_name {
+    return Intl.message(
+      'Enter driver\'s full name',
+      name: 'hint_driver_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Driver's contact`
+  String get driver_number {
+    return Intl.message(
+      'Driver\'s contact',
+      name: 'driver_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter driver's contact`
+  String get hint_driver_number {
+    return Intl.message(
+      'Enter driver\'s contact',
+      name: 'hint_driver_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment type`
+  String get payment_type {
+    return Intl.message(
+      'Payment type',
+      name: 'payment_type',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select payment type`
+  String get select_payment_type {
+    return Intl.message(
+      'Select payment type',
+      name: 'select_payment_type',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Prepayment`
+  String get prepayment {
+    return Intl.message(
+      'Prepayment',
+      name: 'prepayment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment after delivery`
+  String get payment_after {
+    return Intl.message(
+      'Payment after delivery',
+      name: 'payment_after',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Prepayment amount`
+  String get prepayment_amount {
+    return Intl.message(
+      'Prepayment amount',
+      name: 'prepayment_amount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter prepayment amount`
+  String get hint_prepayment_amount {
+    return Intl.message(
+      'Enter prepayment amount',
+      name: 'hint_prepayment_amount',
       desc: '',
       args: [],
     );

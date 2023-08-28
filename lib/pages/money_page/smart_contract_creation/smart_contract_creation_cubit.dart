@@ -13,7 +13,7 @@ class SmartContractCreationCubit extends Cubit<SmartContractCreationState> {
   Future<void> init() async {
     List<String> dropdownValues = [translate.rent, translate.transportation];
     //request contructors
-    var uuid = Uuid();
+    var uuid = const Uuid();
     List<String> contructorIdList = [
       uuid.v4(),
       uuid.v4(),
@@ -27,11 +27,16 @@ class SmartContractCreationCubit extends Cubit<SmartContractCreationState> {
       translate.penalty,
       translate.own_version
     ];
+    List<String> paymentTypeList = [
+      translate.prepayment,
+      translate.payment_after,
+    ];
 
     emit(SmartContractCreationState(
       typeList: dropdownValues,
       contructorList: contructorIdList,
       arbitrationMechanismList: arbitrationMechanismList,
+      listPaymentTypes: paymentTypeList,
     ));
   }
 
@@ -76,5 +81,45 @@ class SmartContractCreationCubit extends Cubit<SmartContractCreationState> {
 
   Future<void> selectArbitrationMechanism(String arbitrationMechanism) async {
     emit(state.copyWith(selectedArbitrationMechanism: arbitrationMechanism));
+  }
+
+  Future<void> departurePointChanged(String departurePoint) async {
+    emit(state.copyWith(selectedDeparturePoint: departurePoint));
+  }
+
+  Future<void> destinationPointChanged(String destinationPoint) async {
+    emit(state.copyWith(selectedDestinationPoint: destinationPoint));
+  }
+
+  Future<void> changeCargoWeight(String cargoWeight) async {
+    emit(state.copyWith(cargoWeight: cargoWeight));
+  }
+
+  Future<void> selectArrivalDate(DateTime dateTime) async {
+    emit(state.copyWith(arrivalDate: dateTime));
+  }
+
+  Future<void> selectShipmentDate(DateTime dateTime) async {
+    emit(state.copyWith(shipmentDate: dateTime));
+  }
+
+  Future<void> changeInsuranse(String insurance) async {
+    emit(state.copyWith(insurance: insurance));
+  }
+
+  Future<void> changeDriverName(String driverName) async {
+    emit(state.copyWith(driverName: driverName));
+  }
+
+  Future<void> changeDriverContact(String driverContact) async {
+    emit(state.copyWith(driverContact: driverContact));
+  }
+
+  Future<void> selectPaymentType(String paymentType) async {
+    emit(state.copyWith(selectedPaymentType: paymentType));
+  }
+
+  Future<void> changePrepaymentAmoount(String prepaymentAmount) async {
+    emit(state.copyWith(prepaymentAmount: prepaymentAmount));
   }
 }

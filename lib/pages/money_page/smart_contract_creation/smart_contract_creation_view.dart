@@ -22,6 +22,7 @@ class SmartContractCreationViewState extends State<SmartContractCreationView> {
   final S translate = getIt<S>();
   final _cubit = SmartContractCreationCubit();
   bool isArbitrationMechanismDropdown = true;
+  bool isPrepayment = false;
 
   @override
   Widget build(BuildContext context) {
@@ -119,6 +120,7 @@ class SmartContractCreationViewState extends State<SmartContractCreationView> {
   ) {
     return [
       CustomTextField(
+        key: const ValueKey('address'),
         onChanged: (value) {
           _cubit.addressChanged(value);
         },
@@ -152,21 +154,25 @@ class SmartContractCreationViewState extends State<SmartContractCreationView> {
         height: 10,
       ),
       CustomTextField(
+        key: const ValueKey('rental price'),
         onChanged: (value) {
           _cubit.changeRentalPrice(value);
         },
         title: 'Arenda rub',
-        hint: state.rentalPrice ?? 'rental',
+        hint: 'rental',
+        text: state.rentalPrice,
       ),
       const SizedBox(
         height: 10,
       ),
       CustomTextField(
+        key: const ValueKey('deposit'),
         onChanged: (value) {
           _cubit.changeDeposit(value);
         },
         title: 'zalog',
-        hint: state.rentalPrice ?? 'zalog',
+        hint: 'zalog',
+        text: state.deposit,
       ),
       const SizedBox(
         height: 10,
@@ -237,11 +243,15 @@ class SmartContractCreationViewState extends State<SmartContractCreationView> {
           },
         ),
         secondChild: CustomTextField(
+          key: const ValueKey('arb'),
           onChanged: (value) {
-            _cubit.selectArbitrationMechanism(value);
+            if (value.isNotEmpty) {
+              _cubit.selectArbitrationMechanism(value);
+            }
           },
           title: translate.arbitration_mechanism,
           hint: translate.enter_own_arbitration_mechanism,
+          text: state.selectedArbitrationMechanism,
         ),
         crossFadeState: isArbitrationMechanismDropdown
             ? CrossFadeState.showFirst
@@ -255,22 +265,180 @@ class SmartContractCreationViewState extends State<SmartContractCreationView> {
     ThemeData theme,
     SmartContractCreationState state,
   ) {
-    List<Widget> widgets = [];
-    if (state.pointsList != null && state.pointsList!.isNotEmpty) {
-      widgets.add(
-        CustomDropdown(
-          title: translate.delivery_point,
-          hint: state.selectedPoint ?? translate.delivery_point_hint,
-          dropdownValues: state.pointsList!,
+    return [
+      CustomTextField(
+        key: const ValueKey('dep'),
+        title: translate.departure_point,
+        hint: translate.hint_departure_point,
+        text: state.selectedDeparturePoint,
+        onChanged: (value) {
+          _cubit.departurePointChanged(value);
+        },
+      ),
+      const SizedBox(
+        height: 10,
+      ),
+      CustomTextField(
+        key: const ValueKey('dest'),
+        title: translate.destination_point,
+        hint: translate.hint_destination_point,
+        text: state.selectedDestinationPoint,
+        onChanged: (value) {
+          _cubit.destinationPointChanged(value);
+        },
+      ),
+      const SizedBox(
+        height: 10,
+      ),
+      CustomTextField(
+        key: const ValueKey('cargo'),
+        title: translate.cargo_weight,
+        hint: translate.enter_cargo_weight,
+        text: state.cargoWeight,
+        onChanged: (value) {
+          _cubit.changeCargoWeight(value);
+        },
+      ),
+      const SizedBox(
+        height: 10,
+      ),
+      CustomDatePicker(
+        title: translate.shipment_date,
+        choosedDateTime: state.shipmentDate ?? DateTime.now(),
+        onChangedDate: (value) {
+          if (value != null) {
+            _cubit.selectShipmentDate(value);
+          }
+        },
+        translate: translate,
+        theme: theme,
+      ),
+      const SizedBox(
+        height: 10,
+      ),
+      CustomDatePicker(
+        title: translate.arrival_date,
+        choosedDateTime: state.arrivalDate ?? DateTime.now(),
+        onChangedDate: (value) {
+          if (value != null) {
+            _cubit.selectArrivalDate(value);
+          }
+        },
+        translate: translate,
+        theme: theme,
+      ),
+      const SizedBox(
+        height: 10,
+      ),
+      CustomTextField(
+        key: const ValueKey('ins'),
+        title: translate.insurance,
+        hint: translate.hint_insurance,
+        text: state.insurance,
+        onChanged: (value) {
+          _cubit.changeInsuranse(value);
+        },
+      ),
+      const SizedBox(
+        height: 10,
+      ),
+      AnimatedCrossFade(
+        firstChild: CustomDropdown(
+          title: translate.arbitration_mechanism,
+          hint: state.selectedArbitrationMechanism ??
+              translate.arbitration_mechanism_not_selected,
+          dropdownValues: state.arbitrationMechanismList!,
           onChanged: (value) {
             if (value != null) {
-              _cubit.selectContructor(value);
+              if (value == translate.own_version) {
+                setState(() {
+                  isArbitrationMechanismDropdown = false;
+                });
+              } else {
+                _cubit.selectArbitrationMechanism(value);
+              }
             }
           },
         ),
-      );
-    }
-    return widgets;
+        secondChild: CustomTextField(
+          onChanged: (value) {
+            _cubit.selectArbitrationMechanism(value);
+          },
+          title: translate.arbitration_mechanism,
+          hint: translate.enter_own_arbitration_mechanism,
+        ),
+        crossFadeState: isArbitrationMechanismDropdown
+            ? CrossFadeState.showFirst
+            : CrossFadeState.showSecond,
+        duration: const Duration(milliseconds: 300),
+      ),
+      const SizedBox(
+        height: 10,
+      ),
+      CustomTextField(
+        key: const ValueKey('r_name'),
+        title: translate.driver_name,
+        hint: translate.hint_driver_name,
+        text: state.driverName,
+        onChanged: (value) {
+          _cubit.changeDriverName(value);
+        },
+      ),
+      const SizedBox(
+        height: 10,
+      ),
+      CustomTextField(
+        key: const ValueKey('r_cont'),
+        title: translate.driver_number,
+        hint: translate.hint_driver_number,
+        text: state.driverContact,
+        onChanged: (value) {
+          _cubit.changeDriverContact(value);
+        },
+      ),
+      const SizedBox(
+        height: 10,
+      ),
+      CustomDropdown(
+        title: translate.payment_type,
+        hint: state.selectedPaymentType ?? translate.select_payment_type,
+        dropdownValues: state.listPaymentTypes!,
+        onChanged: (value) {
+          if (value != null) {
+            if (value == translate.prepayment) {
+              setState(() {
+                isPrepayment = true;
+              });
+            } else {
+              setState(() {
+                isPrepayment = false;
+              });
+            }
+
+            _cubit.selectPaymentType(value);
+          }
+        },
+      ),
+      const SizedBox(
+        height: 10,
+      ),
+      AnimatedCrossFade(
+        firstChild: CustomTextField(
+          title: translate.prepayment_amount,
+          hint: translate.hint_prepayment_amount,
+          text: state.prepaymentAmount,
+          onChanged: (value) {
+            _cubit.changePrepaymentAmoount(value);
+          },
+        ),
+        secondChild: const SizedBox.shrink(),
+        crossFadeState:
+            isPrepayment ? CrossFadeState.showFirst : CrossFadeState.showSecond,
+        duration: const Duration(
+          milliseconds: 300,
+        ),
+      ),
+    ];
   }
 
   Widget _buildSomethingWentWrong() {
