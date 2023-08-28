@@ -42,7 +42,7 @@ class CustomDropdown extends StatelessWidget {
             decoration: BoxDecoration(
               border: Border.all(
                 width: 1.5,
-                color: Colors.grey,
+                color: theme.dividerColor,
               ),
               borderRadius: BorderRadius.circular(10),
             ),
@@ -111,10 +111,10 @@ class DropdownDialogConstructor extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(
           width: 1.5,
-          color: Colors.blue,
+          color: theme.primaryColor,
         ),
         borderRadius: BorderRadius.circular(10),
-        color: Colors.white,
+        color: theme.canvasColor,
       ),
       child: ListView.builder(
         shrinkWrap: true,
@@ -143,8 +143,8 @@ class DropdownDialogConstructor extends StatelessWidget {
                     ),
                     const Spacer(),
                     index != dropdownValues.length - 1
-                        ? const Divider(
-                            color: Colors.blue,
+                        ? Divider(
+                            color: theme.primaryColor,
                             thickness: 0.3,
                             height: 0.3,
                           )

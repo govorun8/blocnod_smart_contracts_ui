@@ -58,15 +58,15 @@ class CustomTextFieldState extends State<CustomTextField> {
               hintStyle: theme.textTheme.bodyMedium,
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
-                borderSide: const BorderSide(
-                  color: Colors.blue,
+                borderSide: BorderSide(
+                  color: theme.primaryColor,
                   width: 1.5,
                 ),
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
-                borderSide: const BorderSide(
-                  color: Colors.grey,
+                borderSide: BorderSide(
+                  color: theme.dividerColor,
                   width: 1.5,
                 ),
               ),

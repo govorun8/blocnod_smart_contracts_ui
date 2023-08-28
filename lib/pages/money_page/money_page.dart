@@ -16,7 +16,7 @@ class MoneyPageState extends State<MoneyPageView> {
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
     return Material(
-      color: Colors.amber,
+      color: theme.canvasColor,
       child: GestureDetector(
         onTap: () {
           GoRouter.of(context).go('/money/contract');
@@ -25,7 +25,7 @@ class MoneyPageState extends State<MoneyPageView> {
           child: Container(
             width: 100,
             height: 50,
-            color: Colors.blue,
+            color: theme.primaryColor,
             child: Center(
               child: Text(
                 translate.new_smart_contract,

@@ -34,6 +34,8 @@ flutter:
   assets:
     - assets/home/
     - assets/money/
+    - assets/bottom_bar/
+    - assets/contract_state/
 
   fonts:
     - family: PTSans

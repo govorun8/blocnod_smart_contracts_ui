@@ -37,12 +37,7 @@ class MainNavigationBarState extends State<MainNavigationBar> {
   static List<CustomNavBarItem> tabs = [
     CustomNavBarItem(
       icon: SvgPicture.asset(
-        'assets/home/unselected_home.svg',
-        width: 50,
-        height: 50,
-      ),
-      activeIcon: SvgPicture.asset(
-        'assets/home/selected_home.svg',
+        'assets/bottom_bar/home.svg',
         width: 50,
         height: 50,
       ),
@@ -51,12 +46,7 @@ class MainNavigationBarState extends State<MainNavigationBar> {
     ),
     CustomNavBarItem(
       icon: SvgPicture.asset(
-        'assets/money/unselected_money.svg',
-        width: 50,
-        height: 50,
-      ),
-      activeIcon: SvgPicture.asset(
-        'assets/money/selected_money.svg',
+        'assets/bottom_bar/settings.svg',
         width: 50,
         height: 50,
       ),
@@ -93,11 +83,12 @@ class MainNavigationBarState extends State<MainNavigationBar> {
       bottomNavigationBar: BottomNavigationBar(
         showUnselectedLabels: false,
         showSelectedLabels: false,
+        enableFeedback: false,
         type: BottomNavigationBarType.fixed,
         onTap: (int index) {
           _goToOtherTab(context, index, currentIndex);
         },
-        backgroundColor: Theme.of(context).focusColor,
+        backgroundColor: Theme.of(context).splashColor,
         currentIndex: currentIndex,
         items: tabs,
       ),
@@ -123,5 +114,9 @@ class CustomNavBarItem extends BottomNavigationBarItem {
     required Widget icon,
     String? label,
     Widget? activeIcon,
-  }) : super(icon: icon, label: label, activeIcon: activeIcon ?? icon);
+  }) : super(
+          icon: icon,
+          label: label,
+          activeIcon: activeIcon ?? icon,
+        );
 }

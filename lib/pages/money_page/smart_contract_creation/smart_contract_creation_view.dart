@@ -27,7 +27,7 @@ class SmartContractCreationViewState extends State<SmartContractCreationView> {
     return BlocProvider(
       create: (context) => _cubit..init(),
       child: Material(
-        color: Colors.white,
+        color: theme.canvasColor,
         child:
             BlocBuilder<SmartContractCreationCubit, SmartContractCreationState>(
           builder: (context, state) {

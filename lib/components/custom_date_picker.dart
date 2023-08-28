@@ -43,7 +43,7 @@ class CustomDatePicker extends StatelessWidget {
             decoration: BoxDecoration(
               border: Border.all(
                 width: 1.5,
-                color: Colors.grey,
+                color: theme.dividerColor,
               ),
               borderRadius: BorderRadius.circular(10),
             ),

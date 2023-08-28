@@ -45,7 +45,7 @@ class CustomAppBarState extends State<CustomAppBar> {
       alignment: Alignment.centerLeft,
       padding: const EdgeInsets.symmetric(horizontal: 40),
       height: 60,
-      color: Colors.blue,
+      color: theme.splashColor,
       child: Text(
         title,
         style: theme.textTheme.bodyMedium,
