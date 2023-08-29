@@ -212,10 +212,10 @@ class SmartContractCreationViewState extends State<SmartContractCreationView> {
       ),
       CustomDatePicker(
         title: translate.contract_start_date,
-        choosedDateTime: state.selectedDateTime ?? DateTime.now(),
+        choosedDateTime: state.selectedDateTimeContract ?? DateTime.now(),
         onChangedDate: (value) {
           if (value != null) {
-            _cubit.selectDateTime(value);
+            _cubit.selectDateTimeContract(value);
           }
         },
         translate: translate,

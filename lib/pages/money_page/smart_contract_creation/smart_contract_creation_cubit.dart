@@ -91,6 +91,10 @@ class SmartContractCreationCubit extends Cubit<SmartContractCreationState> {
     emit(state.copyWith(selectedDateTime: dateTime));
   }
 
+  Future<void> selectDateTimeContract(DateTime dateTime) async {
+    emit(state.copyWith(selectedDateTimeContract: dateTime));
+  }
+
   Future<void> changeUtilitiesPayment(bool utilitiesPayment) async {
     emit(state.copyWith(selectedUtilitiesPayment: utilitiesPayment));
   }
