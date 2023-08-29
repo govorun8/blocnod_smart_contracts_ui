@@ -3,7 +3,7 @@
     "sign_up": "sign up",
     "sign_in": "sign in",
     "home_page_title": "Home page",
-    "money_page_title": "Money page",
+    "money_page_title": "My deals",
     "smart_contract_page_title": "Smart contract creation",
     "new_smart_contract": "New smart contract",
     "select_contract_type": "Select contract type",
@@ -70,5 +70,15 @@
     "contract_on_approval": "Contracts on approval",
     "your_contracts": "Your contracts",
     "price": "Price",
-    "status": "Status"
+    "status": "Status",
+    "no_confirmation_contracts": "No contracts for confirmation",
+    "confirmation_contracts": "Contracts what await confirmation",
+    "contract_go_on_confirmation": "The contract has been sent to the counterparty for approval",
+    "await": "Wait",
+    "request_complited": "Request completed",
+    "to_home": "To the main page",
+    "confirm": "Confirm",
+    "reject": "Reject",
+    "shipping_price": "Shipping price",
+    "enter_shipping_price": "Enter shipping price"
 }

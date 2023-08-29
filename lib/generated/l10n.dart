@@ -90,10 +90,10 @@ class S {
     );
   }
 
-  /// `Money page`
+  /// `My deals`
   String get money_page_title {
     return Intl.message(
-      'Money page',
+      'My deals',
       name: 'money_page_title',
       desc: '',
       args: [],
@@ -765,6 +765,106 @@ class S {
     return Intl.message(
       'Status',
       name: 'status',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No contracts for confirmation`
+  String get no_confirmation_contracts {
+    return Intl.message(
+      'No contracts for confirmation',
+      name: 'no_confirmation_contracts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contracts what await confirmation`
+  String get confirmation_contracts {
+    return Intl.message(
+      'Contracts what await confirmation',
+      name: 'confirmation_contracts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The contract has been sent to the counterparty for approval`
+  String get contract_go_on_confirmation {
+    return Intl.message(
+      'The contract has been sent to the counterparty for approval',
+      name: 'contract_go_on_confirmation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wait`
+  String get await {
+    return Intl.message(
+      'Wait',
+      name: 'await',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Request completed`
+  String get request_complited {
+    return Intl.message(
+      'Request completed',
+      name: 'request_complited',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To the main page`
+  String get to_home {
+    return Intl.message(
+      'To the main page',
+      name: 'to_home',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm`
+  String get confirm {
+    return Intl.message(
+      'Confirm',
+      name: 'confirm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reject`
+  String get reject {
+    return Intl.message(
+      'Reject',
+      name: 'reject',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Shipping price`
+  String get shipping_price {
+    return Intl.message(
+      'Shipping price',
+      name: 'shipping_price',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter shipping price`
+  String get enter_shipping_price {
+    return Intl.message(
+      'Enter shipping price',
+      name: 'enter_shipping_price',
       desc: '',
       args: [],
     );

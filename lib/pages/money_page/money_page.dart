@@ -28,44 +28,45 @@ class MoneyPageViewState extends State<MoneyPageView> {
         child: BlocBuilder<MoneyPageCubit, MoneyPageState>(
           builder: (context, state) {
             return state.maybeMap(
-                inited: (value) {
-                  return Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Column(
-                      children: [
-                        CustomConfirmButton(
-                          onTap: () {
-                            GoRouter.of(context).go('/money/contract');
+              inited: (value) {
+                return Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Column(
+                    children: [
+                      CustomConfirmButton(
+                        onTap: () {
+                          GoRouter.of(context).push('/money/contract');
+                        },
+                        theme: theme,
+                        title: translate.new_smart_contract,
+                      ),
+                      Container(
+                        margin: const EdgeInsets.symmetric(vertical: 15),
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          translate.your_contracts,
+                          style: theme.textTheme.bodyMedium,
+                        ),
+                      ),
+                      Expanded(
+                        child: ListView.builder(
+                          shrinkWrap: true,
+                          itemCount: value.contractsList.length,
+                          itemBuilder: (context, index) {
+                            return SmartContractTile(
+                              theme: theme,
+                              smartContract: value.contractsList[index],
+                              translate: translate,
+                            );
                           },
-                          theme: theme,
-                          title: translate.new_smart_contract,
                         ),
-                        Container(
-                          margin: const EdgeInsets.symmetric(vertical: 15),
-                          alignment: Alignment.topLeft,
-                          child: Text(
-                            translate.your_contracts,
-                            style: theme.textTheme.bodyMedium,
-                          ),
-                        ),
-                        Expanded(
-                          child: ListView.builder(
-                            shrinkWrap: true,
-                            itemCount: value.contractsList.length,
-                            itemBuilder: (context, index) {
-                              return SmartContractTile(
-                                theme: theme,
-                                smartContract: value.contractsList[index],
-                                translate: translate,
-                              );
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
-                  );
-                },
-                orElse: () => const SizedBox.shrink());
+                      ),
+                    ],
+                  ),
+                );
+              },
+              orElse: () => const SizedBox.shrink(),
+            );
           },
         ),
       ),

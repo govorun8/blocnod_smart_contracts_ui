@@ -82,7 +82,7 @@ class CustomDropdown extends StatelessWidget {
           children: [
             Positioned(
               left: position.dx,
-              top: position.dy + height > bodyHeight
+              top: position.dy + height + 40 > bodyHeight
                   ? position.dy - height - 65
                   : position.dy - 5,
               width: size.width,

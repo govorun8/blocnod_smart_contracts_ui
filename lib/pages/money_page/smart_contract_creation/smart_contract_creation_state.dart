@@ -1,3 +1,4 @@
+import 'package:blocnod_smart_contracts_ui/utilities/models/enums.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
@@ -23,40 +24,45 @@ class SmartContractCreationState extends Equatable {
   final String? cargoWeight;
   final DateTime? arrivalDate;
   final DateTime? shipmentDate;
-  final String? insurance;
+  final bool? insurance;
   final String? driverName;
   final String? driverContact;
   final String? selectedPaymentType;
   final List<String>? listPaymentTypes;
   final String? prepaymentAmount;
+  final ResponseStatus? responseStatus;
+  final String? shippingPrice;
 
-  const SmartContractCreationState(
-      {this.typeList,
-      this.selectedType,
-      this.contructorList,
-      this.selectedContructor,
-      this.address,
-      this.pointsList,
-      this.selectedPoint,
-      this.selectedTimeInterval,
-      this.rentalPrice,
-      this.deposit,
-      this.selectedDateTime,
-      this.selectedUtilitiesPayment,
-      this.selectedPetsAllowed,
-      this.arbitrationMechanismList,
-      this.selectedArbitrationMechanism,
-      this.selectedDeparturePoint,
-      this.selectedDestinationPoint,
-      this.cargoWeight,
-      this.arrivalDate,
-      this.shipmentDate,
-      this.insurance,
-      this.driverName,
-      this.driverContact,
-      this.selectedPaymentType,
-      this.listPaymentTypes,
-      this.prepaymentAmount});
+  const SmartContractCreationState({
+    this.typeList,
+    this.selectedType,
+    this.contructorList,
+    this.selectedContructor,
+    this.address,
+    this.pointsList,
+    this.selectedPoint,
+    this.selectedTimeInterval,
+    this.rentalPrice,
+    this.deposit,
+    this.selectedDateTime,
+    this.selectedUtilitiesPayment,
+    this.selectedPetsAllowed,
+    this.arbitrationMechanismList,
+    this.selectedArbitrationMechanism,
+    this.selectedDeparturePoint,
+    this.selectedDestinationPoint,
+    this.cargoWeight,
+    this.arrivalDate,
+    this.shipmentDate,
+    this.insurance,
+    this.driverName,
+    this.driverContact,
+    this.selectedPaymentType,
+    this.listPaymentTypes,
+    this.prepaymentAmount,
+    this.responseStatus,
+    this.shippingPrice,
+  });
 
   SmartContractCreationState copyWith({
     List<String>? typeList,
@@ -79,12 +85,14 @@ class SmartContractCreationState extends Equatable {
     String? cargoWeight,
     DateTime? arrivalDate,
     DateTime? shipmentDate,
-    String? insurance,
+    bool? insurance,
     String? driverName,
     String? driverContact,
     String? selectedPaymentType,
     List<String>? listPaymentTypes,
     String? prepaymentAmount,
+    ResponseStatus? responseStatus,
+    String? shippingPrice,
   }) {
     return SmartContractCreationState(
       typeList: typeList ?? this.typeList,
@@ -114,10 +122,12 @@ class SmartContractCreationState extends Equatable {
       shipmentDate: shipmentDate ?? this.shipmentDate,
       insurance: insurance ?? this.insurance,
       driverName: driverName ?? this.driverName,
-      driverContact: insurance ?? this.insurance,
+      driverContact: driverContact ?? this.driverContact,
       selectedPaymentType: selectedPaymentType ?? this.selectedPaymentType,
       listPaymentTypes: listPaymentTypes ?? this.listPaymentTypes,
       prepaymentAmount: prepaymentAmount ?? this.prepaymentAmount,
+      responseStatus: responseStatus ?? this.responseStatus,
+      shippingPrice: shippingPrice ?? this.shippingPrice,
     );
   }
 
@@ -149,5 +159,7 @@ class SmartContractCreationState extends Equatable {
         selectedPaymentType,
         listPaymentTypes,
         prepaymentAmount,
+        responseStatus,
+        shippingPrice,
       ];
 }

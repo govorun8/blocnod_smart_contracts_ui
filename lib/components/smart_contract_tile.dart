@@ -1,3 +1,5 @@
+import 'package:blocnod_smart_contracts_ui/components/custom_confirm_button.dart';
+import 'package:blocnod_smart_contracts_ui/components/custom_reject_button.dart';
 import 'package:blocnod_smart_contracts_ui/components/custom_user_info.dart';
 import 'package:blocnod_smart_contracts_ui/generated/l10n.dart';
 import 'package:blocnod_smart_contracts_ui/utilities/models/enums.dart';
@@ -11,11 +13,17 @@ class SmartContractTile extends StatelessWidget {
     required this.theme,
     required this.smartContract,
     required this.translate,
+    this.showConfirmButton = false,
+    this.onTapConfirm,
+    this.onTapReject,
   });
 
   final ThemeData theme;
   final SmartContractFromBack smartContract;
   final S translate;
+  final bool showConfirmButton;
+  final void Function()? onTapConfirm;
+  final void Function()? onTapReject;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +38,7 @@ class SmartContractTile extends StatelessWidget {
       case (SmartContractStatus.finished):
         statusAsset = 'assets/contract_state/done.svg';
         break;
-      case (SmartContractStatus.canceled):
+      case (SmartContractStatus.cancelled):
         statusAsset = 'assets/contract_state/error.svg';
         break;
       case (SmartContractStatus.executorConfirmation):
@@ -100,6 +108,23 @@ class SmartContractTile extends StatelessWidget {
                     : smartContract.arbitration,
             theme: theme,
           ),
+          showConfirmButton
+              ? Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    CustomRejectButton(
+                      title: translate.reject,
+                      theme: theme,
+                      onTap: onTapReject ?? () {},
+                    ),
+                    CustomConfirmButton(
+                      title: translate.confirm,
+                      theme: theme,
+                      onTap: onTapConfirm ?? () {},
+                    ),
+                  ],
+                )
+              : const SizedBox.shrink(),
         ],
       ),
     );

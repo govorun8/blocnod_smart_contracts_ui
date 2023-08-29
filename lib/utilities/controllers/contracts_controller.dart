@@ -19,7 +19,13 @@ class ContractsController {
     return result;
   }
 
-  Future<void> createNewSmartContract(
+  Future<List<SmartContractFromBack>?> getUserSmartContractsToAgree(
+      String userId) async {
+    final result = await contractsRepository.getContractsToAgree(userId);
+    return result;
+  }
+
+  Future<ResponseStatus> createNewSmartContract(
     SmartContractType type,
     String creatorId,
     String executorId,
@@ -35,6 +41,25 @@ class ContractsController {
         arbitration: arbitration,
         additionalStatements: additionalStatements);
 
-    await contractsRepository.createNewSmartContract(smartContract);
+    final result =
+        await contractsRepository.createNewSmartContract(smartContract);
+    return result;
+  }
+
+  Future<ResponseStatus> confirmContract(
+    String contractId,
+    String userId,
+  ) async {
+    final result =
+        await contractsRepository.confirmContract(contractId, userId);
+    return result;
+  }
+
+  Future<ResponseStatus> rejectContract(
+    String contractId,
+    String userId,
+  ) async {
+    final result = await contractsRepository.rejectContract(contractId, userId);
+    return result;
   }
 }

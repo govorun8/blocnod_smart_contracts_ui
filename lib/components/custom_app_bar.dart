@@ -39,6 +39,9 @@ class CustomAppBarState extends State<CustomAppBar> {
       case ('/money/contract'):
         title = translate.new_smart_contract;
         break;
+      case ('/money/request_done'):
+        title = translate.request_complited;
+        break;
     }
 
     return Container(
