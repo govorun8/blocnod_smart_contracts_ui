@@ -9,6 +9,8 @@ class HomePageState with _$HomePageState {
 
   factory HomePageState.inited({
     required List<SmartContract> contractsList,
+    required List<String> languageList,
+    required String selectedLanguage,
   }) = _HomePageStateInited;
 
   factory HomePageState.finished() = _HomePageStateFinished;

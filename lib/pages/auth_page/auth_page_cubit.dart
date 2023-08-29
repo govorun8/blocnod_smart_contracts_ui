@@ -1,70 +1,86 @@
-// import 'package:blocnod_smart_contracts_ui/pages/auth_page/auth_page_state.dart';
-// import 'package:blocnod_smart_contracts_ui/utilities/controllers/authentification_controller.dart';
-// import 'package:blocnod_smart_contracts_ui/utilities/injection_conf/injection.dart';
-// import 'package:blocnod_smart_contracts_ui/utilities/models/enums.dart';
-// import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:blocnod_smart_contracts_ui/pages/auth_page/auth_page_state.dart';
+import 'package:blocnod_smart_contracts_ui/utilities/controllers/user_controller.dart';
+import 'package:blocnod_smart_contracts_ui/utilities/injection_conf/injection.dart';
+import 'package:blocnod_smart_contracts_ui/utilities/models/enums.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-// class AuthPageCubit extends Cubit<AuthPageState> {
-//   AuthPageCubit()
-//       : super(AuthPageState.auth(
-//           email: '',
-//           password: '',
-//           isEmailValid: true,
-//           isPasswordValid: true,
-//         ));
+class AuthPageCubit extends Cubit<AuthPageState> {
+  AuthPageCubit() : super(AuthPageState.loading());
 
-//   final AuthentificationController _authentificationController =
-//       getIt<AuthentificationController>();
+  final UserController userController = getIt<UserController>();
 
-//   Future<void> init() async {
-//     emit(AuthPageState.inProgress());
-//     final tokenSingnInResult = await _authentificationController.trySignIn();
-//     if (tokenSingnInResult == AuthentificationStatus.authentificated) {
-//       emit(AuthPageState.finished(authentificationStatus: tokenSingnInResult));
-//     } else {
-//       emit(AuthPageState.error(authentificationStatus: tokenSingnInResult));
-//     }
+  Future<void> init() async {
+    emit(AuthPageState.inited());
+  }
 
-//     final storedCredentials =
-//         await _authentificationController.getStoredCredential();
+  Future<void> createNewUser(
+    String id,
+    String name,
+    String email,
+    String balance,
+  ) async {
+    final result = await userController.createNewUser(
+      id,
+      name,
+      balance,
+      email,
+    );
+    if (result == ResponseStatus.done) {
+      emit(AuthPageState.finished(status: result));
+    } else {
+      emit(AuthPageState.error());
+    }
+  }
 
-//     emit(AuthPageState.auth(
-//       email: storedCredentials,
-//       password: '',
-//       isEmailValid: true,
-//       isPasswordValid: true,
-//     ));
-//   }
+  Future<void> idChanged(String id) async {
+    state.maybeMap(
+      inited: (value) {
+        emit(AuthPageState.inited(
+            id: id,
+            name: value.name,
+            email: value.email,
+            balance: value.balance));
+      },
+      orElse: () {},
+    );
+  }
 
-//   Future<void> validateEmail(String email) async {
-//     state.maybeMap(
-//         auth: (value) {
-//           bool isEmailValid = true;
-// //TODO email validation
+  Future<void> nameChanged(String name) async {
+    state.maybeMap(
+      inited: (value) {
+        emit(AuthPageState.inited(
+            id: value.id,
+            name: name,
+            email: value.email,
+            balance: value.balance));
+      },
+      orElse: () {},
+    );
+  }
 
-//           emit(AuthPageState.auth(
-//             email: email,
-//             password: value.password,
-//             isEmailValid: isEmailValid,
-//             isPasswordValid: value.isPasswordValid,
-//           ));
-//         },
-//         orElse: () => ());
-//   }
+  Future<void> emailChanged(String email) async {
+    state.maybeMap(
+      inited: (value) {
+        emit(AuthPageState.inited(
+            id: value.id,
+            name: value.name,
+            email: email,
+            balance: value.balance));
+      },
+      orElse: () {},
+    );
+  }
 
-//   Future<void> validatePassword(String password) async {
-//     state.maybeMap(
-//         auth: (value) {
-//           bool isPasswordValid = true;
-// //TODO password validation
-
-//           emit(AuthPageState.auth(
-//             email: value.email,
-//             password: password,
-//             isEmailValid: value.isEmailValid,
-//             isPasswordValid: isPasswordValid,
-//           ));
-//         },
-//         orElse: () => ());
-//   }
-// }
+  Future<void> balanceChanged(String balance) async {
+    state.maybeMap(
+      inited: (value) {
+        emit(AuthPageState.inited(
+            id: value.id,
+            name: value.name,
+            email: value.email,
+            balance: balance));
+      },
+      orElse: () {},
+    );
+  }
+}

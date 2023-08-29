@@ -30,6 +30,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Arbitration mechanism not selected"),
         "arrival_date": MessageLookupByLibrary.simpleMessage("Arrival date"),
+        "balance": MessageLookupByLibrary.simpleMessage("Balance"),
+        "balance_hint": MessageLookupByLibrary.simpleMessage("Enter balance"),
         "cargo_weight": MessageLookupByLibrary.simpleMessage("Cargo weight"),
         "conract_confirmation":
             MessageLookupByLibrary.simpleMessage("Contract confirmation"),
@@ -44,6 +46,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Driver\'s full name"),
         "driver_number":
             MessageLookupByLibrary.simpleMessage("Driver\'s contact"),
+        "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "email_hint": MessageLookupByLibrary.simpleMessage("Enter email"),
+        "en": MessageLookupByLibrary.simpleMessage("English"),
         "enter_cargo_weight":
             MessageLookupByLibrary.simpleMessage("Enter cargo weight"),
         "enter_own_arbitration_mechanism": MessageLookupByLibrary.simpleMessage(
@@ -62,8 +67,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "hint_prepayment_amount":
             MessageLookupByLibrary.simpleMessage("Enter prepayment amount"),
         "home_page_title": MessageLookupByLibrary.simpleMessage("Home page"),
+        "id": MessageLookupByLibrary.simpleMessage("Id"),
+        "id_hint": MessageLookupByLibrary.simpleMessage("Enter Id"),
         "insurance": MessageLookupByLibrary.simpleMessage("Insurance"),
         "money_page_title": MessageLookupByLibrary.simpleMessage("Money page"),
+        "name": MessageLookupByLibrary.simpleMessage("Name"),
+        "name_hint": MessageLookupByLibrary.simpleMessage("Enter name"),
         "new_smart_contract":
             MessageLookupByLibrary.simpleMessage("New smart contract"),
         "own_version": MessageLookupByLibrary.simpleMessage("Your own version"),
@@ -76,10 +85,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Prepayment amount"),
         "rent": MessageLookupByLibrary.simpleMessage("Rent"),
         "rental_period": MessageLookupByLibrary.simpleMessage("Rental period"),
+        "ru": MessageLookupByLibrary.simpleMessage("Russian"),
         "select_contract_type":
             MessageLookupByLibrary.simpleMessage("Select contract type"),
         "select_contractor":
             MessageLookupByLibrary.simpleMessage("Select contructor"),
+        "select_language":
+            MessageLookupByLibrary.simpleMessage("Select language"),
         "select_payment_type":
             MessageLookupByLibrary.simpleMessage("Select payment type"),
         "shipment_date": MessageLookupByLibrary.simpleMessage("Shipment date"),

@@ -19,7 +19,9 @@ mixin _$HomePageState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<SmartContract> contractsList) inited,
+    required TResult Function(List<SmartContract> contractsList,
+            List<String> languageList, String selectedLanguage)
+        inited,
     required TResult Function() finished,
     required TResult Function() error,
   }) =>
@@ -27,7 +29,9 @@ mixin _$HomePageState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<SmartContract> contractsList)? inited,
+    TResult? Function(List<SmartContract> contractsList,
+            List<String> languageList, String selectedLanguage)?
+        inited,
     TResult? Function()? finished,
     TResult? Function()? error,
   }) =>
@@ -35,7 +39,9 @@ mixin _$HomePageState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<SmartContract> contractsList)? inited,
+    TResult Function(List<SmartContract> contractsList,
+            List<String> languageList, String selectedLanguage)?
+        inited,
     TResult Function()? finished,
     TResult Function()? error,
     required TResult orElse(),
@@ -125,7 +131,9 @@ class _$_HomePageStateLoading implements _HomePageStateLoading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<SmartContract> contractsList) inited,
+    required TResult Function(List<SmartContract> contractsList,
+            List<String> languageList, String selectedLanguage)
+        inited,
     required TResult Function() finished,
     required TResult Function() error,
   }) {
@@ -136,7 +144,9 @@ class _$_HomePageStateLoading implements _HomePageStateLoading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<SmartContract> contractsList)? inited,
+    TResult? Function(List<SmartContract> contractsList,
+            List<String> languageList, String selectedLanguage)?
+        inited,
     TResult? Function()? finished,
     TResult? Function()? error,
   }) {
@@ -147,7 +157,9 @@ class _$_HomePageStateLoading implements _HomePageStateLoading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<SmartContract> contractsList)? inited,
+    TResult Function(List<SmartContract> contractsList,
+            List<String> languageList, String selectedLanguage)?
+        inited,
     TResult Function()? finished,
     TResult Function()? error,
     required TResult orElse(),
@@ -206,7 +218,10 @@ abstract class _$$_HomePageStateInitedCopyWith<$Res> {
           $Res Function(_$_HomePageStateInited) then) =
       __$$_HomePageStateInitedCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<SmartContract> contractsList});
+  $Res call(
+      {List<SmartContract> contractsList,
+      List<String> languageList,
+      String selectedLanguage});
 }
 
 /// @nodoc
@@ -221,12 +236,22 @@ class __$$_HomePageStateInitedCopyWithImpl<$Res>
   @override
   $Res call({
     Object? contractsList = null,
+    Object? languageList = null,
+    Object? selectedLanguage = null,
   }) {
     return _then(_$_HomePageStateInited(
       contractsList: null == contractsList
           ? _value._contractsList
           : contractsList // ignore: cast_nullable_to_non_nullable
               as List<SmartContract>,
+      languageList: null == languageList
+          ? _value._languageList
+          : languageList // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      selectedLanguage: null == selectedLanguage
+          ? _value.selectedLanguage
+          : selectedLanguage // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -234,8 +259,12 @@ class __$$_HomePageStateInitedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_HomePageStateInited implements _HomePageStateInited {
-  _$_HomePageStateInited({required final List<SmartContract> contractsList})
-      : _contractsList = contractsList;
+  _$_HomePageStateInited(
+      {required final List<SmartContract> contractsList,
+      required final List<String> languageList,
+      required this.selectedLanguage})
+      : _contractsList = contractsList,
+        _languageList = languageList;
 
   final List<SmartContract> _contractsList;
   @override
@@ -245,9 +274,20 @@ class _$_HomePageStateInited implements _HomePageStateInited {
     return EqualUnmodifiableListView(_contractsList);
   }
 
+  final List<String> _languageList;
+  @override
+  List<String> get languageList {
+    if (_languageList is EqualUnmodifiableListView) return _languageList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_languageList);
+  }
+
+  @override
+  final String selectedLanguage;
+
   @override
   String toString() {
-    return 'HomePageState.inited(contractsList: $contractsList)';
+    return 'HomePageState.inited(contractsList: $contractsList, languageList: $languageList, selectedLanguage: $selectedLanguage)';
   }
 
   @override
@@ -256,12 +296,19 @@ class _$_HomePageStateInited implements _HomePageStateInited {
         (other.runtimeType == runtimeType &&
             other is _$_HomePageStateInited &&
             const DeepCollectionEquality()
-                .equals(other._contractsList, _contractsList));
+                .equals(other._contractsList, _contractsList) &&
+            const DeepCollectionEquality()
+                .equals(other._languageList, _languageList) &&
+            (identical(other.selectedLanguage, selectedLanguage) ||
+                other.selectedLanguage == selectedLanguage));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_contractsList));
+      runtimeType,
+      const DeepCollectionEquality().hash(_contractsList),
+      const DeepCollectionEquality().hash(_languageList),
+      selectedLanguage);
 
   @JsonKey(ignore: true)
   @override
@@ -274,35 +321,41 @@ class _$_HomePageStateInited implements _HomePageStateInited {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<SmartContract> contractsList) inited,
+    required TResult Function(List<SmartContract> contractsList,
+            List<String> languageList, String selectedLanguage)
+        inited,
     required TResult Function() finished,
     required TResult Function() error,
   }) {
-    return inited(contractsList);
+    return inited(contractsList, languageList, selectedLanguage);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<SmartContract> contractsList)? inited,
+    TResult? Function(List<SmartContract> contractsList,
+            List<String> languageList, String selectedLanguage)?
+        inited,
     TResult? Function()? finished,
     TResult? Function()? error,
   }) {
-    return inited?.call(contractsList);
+    return inited?.call(contractsList, languageList, selectedLanguage);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<SmartContract> contractsList)? inited,
+    TResult Function(List<SmartContract> contractsList,
+            List<String> languageList, String selectedLanguage)?
+        inited,
     TResult Function()? finished,
     TResult Function()? error,
     required TResult orElse(),
   }) {
     if (inited != null) {
-      return inited(contractsList);
+      return inited(contractsList, languageList, selectedLanguage);
     }
     return orElse();
   }
@@ -347,10 +400,13 @@ class _$_HomePageStateInited implements _HomePageStateInited {
 
 abstract class _HomePageStateInited implements HomePageState {
   factory _HomePageStateInited(
-          {required final List<SmartContract> contractsList}) =
-      _$_HomePageStateInited;
+      {required final List<SmartContract> contractsList,
+      required final List<String> languageList,
+      required final String selectedLanguage}) = _$_HomePageStateInited;
 
   List<SmartContract> get contractsList;
+  List<String> get languageList;
+  String get selectedLanguage;
   @JsonKey(ignore: true)
   _$$_HomePageStateInitedCopyWith<_$_HomePageStateInited> get copyWith =>
       throw _privateConstructorUsedError;
@@ -395,7 +451,9 @@ class _$_HomePageStateFinished implements _HomePageStateFinished {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<SmartContract> contractsList) inited,
+    required TResult Function(List<SmartContract> contractsList,
+            List<String> languageList, String selectedLanguage)
+        inited,
     required TResult Function() finished,
     required TResult Function() error,
   }) {
@@ -406,7 +464,9 @@ class _$_HomePageStateFinished implements _HomePageStateFinished {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<SmartContract> contractsList)? inited,
+    TResult? Function(List<SmartContract> contractsList,
+            List<String> languageList, String selectedLanguage)?
+        inited,
     TResult? Function()? finished,
     TResult? Function()? error,
   }) {
@@ -417,7 +477,9 @@ class _$_HomePageStateFinished implements _HomePageStateFinished {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<SmartContract> contractsList)? inited,
+    TResult Function(List<SmartContract> contractsList,
+            List<String> languageList, String selectedLanguage)?
+        inited,
     TResult Function()? finished,
     TResult Function()? error,
     required TResult orElse(),
@@ -509,7 +571,9 @@ class _$_HomePageStateError implements _HomePageStateError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<SmartContract> contractsList) inited,
+    required TResult Function(List<SmartContract> contractsList,
+            List<String> languageList, String selectedLanguage)
+        inited,
     required TResult Function() finished,
     required TResult Function() error,
   }) {
@@ -520,7 +584,9 @@ class _$_HomePageStateError implements _HomePageStateError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<SmartContract> contractsList)? inited,
+    TResult? Function(List<SmartContract> contractsList,
+            List<String> languageList, String selectedLanguage)?
+        inited,
     TResult? Function()? finished,
     TResult? Function()? error,
   }) {
@@ -531,7 +597,9 @@ class _$_HomePageStateError implements _HomePageStateError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<SmartContract> contractsList)? inited,
+    TResult Function(List<SmartContract> contractsList,
+            List<String> languageList, String selectedLanguage)?
+        inited,
     TResult Function()? finished,
     TResult Function()? error,
     required TResult orElse(),

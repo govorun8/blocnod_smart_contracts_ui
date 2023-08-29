@@ -1,3 +1,4 @@
+import 'package:blocnod_smart_contracts_ui/components/custom_dropdown.dart';
 import 'package:blocnod_smart_contracts_ui/generated/l10n.dart';
 import 'package:blocnod_smart_contracts_ui/pages/home_page/home_page_cubit.dart';
 import 'package:blocnod_smart_contracts_ui/pages/home_page/home_page_state.dart';
@@ -6,6 +7,7 @@ import 'package:blocnod_smart_contracts_ui/utilities/models/smart_contract/smart
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:intl/intl.dart';
 
 class HomePageView extends StatefulWidget {
   const HomePageView({super.key});
@@ -40,7 +42,15 @@ class HomePageViewState extends State<HomePageView> {
                 );
               },
               inited: (value) {
-                return _buildContractsList(value.contractsList, theme);
+                return Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    _buildLanguageDropdown(
+                        theme, value.languageList, value.selectedLanguage),
+                    // _buildContractsList(value.contractsList, theme),
+                  ],
+                );
               },
               orElse: () => const SizedBox.shrink(),
             );
@@ -65,5 +75,23 @@ class HomePageViewState extends State<HomePageView> {
         );
       },
     );
+  }
+
+  Widget _buildLanguageDropdown(
+    ThemeData theme,
+    List<String> listLanguage,
+    String selectedLanguage,
+  ) {
+    return CustomDropdown(
+        title: translate.select_language,
+        hint: selectedLanguage,
+        dropdownValues: listLanguage,
+        onChanged: (value) {
+          if (value == translate.ru) {
+            _cubit.changeLocale('ru');
+          } else if (value == translate.en) {
+            _cubit.changeLocale('en');
+          }
+        });
   }
 }

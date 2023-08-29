@@ -469,6 +469,116 @@ class S {
       args: [],
     );
   }
+
+  /// `Id`
+  String get id {
+    return Intl.message(
+      'Id',
+      name: 'id',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter Id`
+  String get id_hint {
+    return Intl.message(
+      'Enter Id',
+      name: 'id_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get name {
+    return Intl.message(
+      'Name',
+      name: 'name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter name`
+  String get name_hint {
+    return Intl.message(
+      'Enter name',
+      name: 'name_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get email {
+    return Intl.message(
+      'Email',
+      name: 'email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter email`
+  String get email_hint {
+    return Intl.message(
+      'Enter email',
+      name: 'email_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Balance`
+  String get balance {
+    return Intl.message(
+      'Balance',
+      name: 'balance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter balance`
+  String get balance_hint {
+    return Intl.message(
+      'Enter balance',
+      name: 'balance_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Russian`
+  String get ru {
+    return Intl.message(
+      'Russian',
+      name: 'ru',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `English`
+  String get en {
+    return Intl.message(
+      'English',
+      name: 'en',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select language`
+  String get select_language {
+    return Intl.message(
+      'Select language',
+      name: 'select_language',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
