@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CustomConfirmButton extends StatelessWidget {
-  const CustomConfirmButton({
+class CustomRejectButton extends StatelessWidget {
+  const CustomRejectButton({
     super.key,
     required this.title,
     required this.theme,
@@ -23,7 +23,7 @@ class CustomConfirmButton extends StatelessWidget {
           height: 50,
           alignment: Alignment.center,
           decoration: BoxDecoration(
-            color: theme.primaryColor,
+            color: theme.indicatorColor,
             borderRadius: BorderRadius.circular(10),
           ),
           child: Center(

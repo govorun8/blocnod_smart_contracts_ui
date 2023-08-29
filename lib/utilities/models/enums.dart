@@ -22,7 +22,7 @@ enum SmartContractStatus {
   created,
   inProgress,
   finished,
-  canceled,
+  cancelled,
   creatorConfirmation,
   executorConfirmation,
   executorAgreement,

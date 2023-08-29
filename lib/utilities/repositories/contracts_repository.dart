@@ -30,16 +30,84 @@ class ContractsRepository {
     return null;
   }
 
-  Future<void> createNewSmartContract(SmartContract smartContract) async {
+  Future<ResponseStatus> createNewSmartContract(
+      SmartContract smartContract) async {
     try {
       final data = smartContract.toJson();
-      await _dio.post(
+      final result = await _dio.post(
         '/smart-contract',
         data: data,
       );
+      if (result.statusCode == 200) {
+        return ResponseStatus.done;
+      } else {
+        return ResponseStatus.failed;
+      }
+    } on DioException catch (e) {
+      if (e.response?.statusCode != 200) {
+        return ResponseStatus.failed;
+      } else {
+        return ResponseStatus.failed;
+      }
+    }
+  }
+
+  Future<List<SmartContractFromBack>?> getContractsToAgree(
+      String userId) async {
+    try {
+      final response = await _dio.get('/user/$userId/contractsToAgree');
+      return response.data
+          .map<SmartContractFromBack>(
+              (smartContract) => SmartContractFromBack.fromJson(smartContract))
+          .toList();
     } on DioException catch (e) {
       if (e.response?.statusCode != 200) {
         throw ResponseStatus.failed;
+      }
+    }
+    return null;
+  }
+
+  Future<ResponseStatus> confirmContract(
+    String contractId,
+    String userId,
+  ) async {
+    try {
+      final result = await _dio.post(
+        '/smart-contract/$contractId/agree/$userId',
+      );
+      if (result.statusCode == 200) {
+        return ResponseStatus.done;
+      } else {
+        return ResponseStatus.failed;
+      }
+    } on DioException catch (e) {
+      if (e.response?.statusCode != 200) {
+        return ResponseStatus.failed;
+      } else {
+        return ResponseStatus.failed;
+      }
+    }
+  }
+
+  Future<ResponseStatus> rejectContract(
+    String contractId,
+    String userId,
+  ) async {
+    try {
+      final result = await _dio.post(
+        '/smart-contract/$contractId/reject/$userId',
+      );
+      if (result.statusCode == 200) {
+        return ResponseStatus.done;
+      } else {
+        return ResponseStatus.failed;
+      }
+    } on DioException catch (e) {
+      if (e.response?.statusCode != 200) {
+        return ResponseStatus.failed;
+      } else {
+        return ResponseStatus.failed;
       }
     }
   }

@@ -8,8 +8,10 @@ import 'package:blocnod_smart_contracts_ui/generated/l10n.dart';
 import 'package:blocnod_smart_contracts_ui/pages/money_page/smart_contract_creation/smart_contract_creation_cubit.dart';
 import 'package:blocnod_smart_contracts_ui/pages/money_page/smart_contract_creation/smart_contract_creation_state.dart';
 import 'package:blocnod_smart_contracts_ui/utilities/injection_conf/injection.dart';
+import 'package:blocnod_smart_contracts_ui/utilities/models/enums.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class SmartContractCreationView extends StatefulWidget {
   const SmartContractCreationView({super.key});
@@ -33,37 +35,47 @@ class SmartContractCreationViewState extends State<SmartContractCreationView> {
       create: (context) => _cubit..init(),
       child: Material(
         color: theme.canvasColor,
-        child:
-            BlocBuilder<SmartContractCreationCubit, SmartContractCreationState>(
-          builder: (context, state) {
-            if (state.contructorList == null ||
-                state.contructorList!.isEmpty ||
-                state.typeList == null ||
-                state.typeList!.isEmpty) {
-              return _buildSomethingWentWrong();
+        child: BlocListener<SmartContractCreationCubit,
+            SmartContractCreationState>(
+          listener: (context, state) {
+            if (state.responseStatus == ResponseStatus.done) {
+              WidgetsBinding.instance.addPostFrameCallback((_) {
+                GoRouter.of(context).go('/money/request_done');
+              });
             }
+          },
+          child: BlocBuilder<SmartContractCreationCubit,
+              SmartContractCreationState>(
+            builder: (context, state) {
+              if (state.contructorList == null ||
+                  state.contructorList!.isEmpty ||
+                  state.typeList == null ||
+                  state.typeList!.isEmpty) {
+                return _buildSomethingWentWrong();
+              }
 
-            return GestureDetector(
-              onTap: () {
-                FocusScope.of(context).unfocus();
-              },
-              child: SingleChildScrollView(
-                child: Padding(
-                  padding: EdgeInsets.only(
-                    left: 20,
-                    right: 20,
-                    top: 30,
-                    bottom: MediaQuery.of(context).viewInsets.bottom,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: _buildForm(theme, state),
+              return GestureDetector(
+                onTap: () {
+                  FocusScope.of(context).unfocus();
+                },
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                      left: 20,
+                      right: 20,
+                      top: 30,
+                      bottom: MediaQuery.of(context).viewInsets.bottom,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: _buildForm(theme, state),
+                    ),
                   ),
                 ),
-              ),
-            );
-          },
+              );
+            },
+          ),
         ),
       ),
     );
@@ -337,11 +349,10 @@ class SmartContractCreationViewState extends State<SmartContractCreationView> {
       const SizedBox(
         height: 10,
       ),
-      CustomTextField(
-        key: const ValueKey('ins'),
+      CustomSwitchButton(
         title: translate.insurance,
-        hint: translate.hint_insurance,
-        text: state.insurance,
+        theme: theme,
+        selectedState: state.insurance ?? false,
         onChanged: (value) {
           _cubit.changeInsuranse(value);
         },

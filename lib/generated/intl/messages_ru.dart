@@ -30,11 +30,17 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Механизм арбитража не выбран"),
         "arrival_date": MessageLookupByLibrary.simpleMessage("Дата прибытия"),
+        "await": MessageLookupByLibrary.simpleMessage("Ожидайте"),
         "balance": MessageLookupByLibrary.simpleMessage("Баланс"),
         "balance_hint": MessageLookupByLibrary.simpleMessage("Введите баланс"),
         "cargo_weight": MessageLookupByLibrary.simpleMessage("Вес груза"),
+        "confirm": MessageLookupByLibrary.simpleMessage("Подтвердить"),
+        "confirmation_contracts": MessageLookupByLibrary.simpleMessage(
+            "Контракты ожидающие подтверждения"),
         "conract_confirmation":
             MessageLookupByLibrary.simpleMessage("Подтверждение контракта"),
+        "contract_go_on_confirmation": MessageLookupByLibrary.simpleMessage(
+            "Контракт отпарвлен на согласование контрагенту"),
         "contract_on_approval":
             MessageLookupByLibrary.simpleMessage("Контракты на согласовании"),
         "contract_start_date":
@@ -92,6 +98,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "name_hint": MessageLookupByLibrary.simpleMessage("Введите имя"),
         "new_smart_contract":
             MessageLookupByLibrary.simpleMessage("Новый смарт контракт"),
+        "no_confirmation_contracts": MessageLookupByLibrary.simpleMessage(
+            "Нет контрактов для подтверждения"),
         "own_version": MessageLookupByLibrary.simpleMessage("Свой вариант"),
         "payment_after":
             MessageLookupByLibrary.simpleMessage("Оплата по факту"),
@@ -105,10 +113,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "prepayment_amount":
             MessageLookupByLibrary.simpleMessage("Размер предоплаты"),
         "price": MessageLookupByLibrary.simpleMessage("Стоимость"),
+        "reject": MessageLookupByLibrary.simpleMessage("Отклонить"),
         "rent": MessageLookupByLibrary.simpleMessage("Аренда"),
         "rent_amount":
             MessageLookupByLibrary.simpleMessage("Сумма арендной платы"),
         "rental_period": MessageLookupByLibrary.simpleMessage("Срок аренды"),
+        "request_complited":
+            MessageLookupByLibrary.simpleMessage("Запрос выполнен"),
         "ru": MessageLookupByLibrary.simpleMessage("Русский"),
         "security_deposit":
             MessageLookupByLibrary.simpleMessage("Сумма залога"),
@@ -126,6 +137,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "smart_contract_page_title":
             MessageLookupByLibrary.simpleMessage("Создание смарт контракта"),
         "status": MessageLookupByLibrary.simpleMessage("Статус"),
+        "to_home": MessageLookupByLibrary.simpleMessage("На главную"),
         "transportation":
             MessageLookupByLibrary.simpleMessage("Транспортировка"),
         "type_not_selected":

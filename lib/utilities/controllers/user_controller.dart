@@ -35,7 +35,9 @@ class UserController {
 
     if (result != null) {
       for (User user in result) {
-        contructorsList.add(user.id);
+        if (user.id != userRepository.user.id) {
+          contructorsList.add(user.id);
+        }
       }
     }
 

@@ -70,5 +70,13 @@
     "contract_on_approval": "Contracts on approval",
     "your_contracts": "Your contracts",
     "price": "Price",
-    "status": "Status"
+    "status": "Status",
+    "no_confirmation_contracts": "No contracts for confirmation",
+    "confirmation_contracts": "Contracts what await confirmation",
+    "contract_go_on_confirmation": "The contract has been sent to the counterparty for approval",
+    "await": "Wait",
+    "request_complited": "Request completed",
+    "to_home": "To the main page",
+    "confirm": "Confirm",
+    "reject": "Reject"
 }

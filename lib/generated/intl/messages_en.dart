@@ -30,11 +30,17 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Arbitration mechanism not selected"),
         "arrival_date": MessageLookupByLibrary.simpleMessage("Arrival date"),
+        "await": MessageLookupByLibrary.simpleMessage("Wait"),
         "balance": MessageLookupByLibrary.simpleMessage("Balance"),
         "balance_hint": MessageLookupByLibrary.simpleMessage("Enter balance"),
         "cargo_weight": MessageLookupByLibrary.simpleMessage("Cargo weight"),
+        "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
+        "confirmation_contracts": MessageLookupByLibrary.simpleMessage(
+            "Contracts what await confirmation"),
         "conract_confirmation":
             MessageLookupByLibrary.simpleMessage("Contract confirmation"),
+        "contract_go_on_confirmation": MessageLookupByLibrary.simpleMessage(
+            "The contract has been sent to the counterparty for approval"),
         "contract_on_approval":
             MessageLookupByLibrary.simpleMessage("Contracts on approval"),
         "contract_start_date":
@@ -93,6 +99,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "name_hint": MessageLookupByLibrary.simpleMessage("Enter name"),
         "new_smart_contract":
             MessageLookupByLibrary.simpleMessage("New smart contract"),
+        "no_confirmation_contracts": MessageLookupByLibrary.simpleMessage(
+            "No contracts for confirmation"),
         "own_version": MessageLookupByLibrary.simpleMessage("Your own version"),
         "payment_after":
             MessageLookupByLibrary.simpleMessage("Payment after delivery"),
@@ -105,9 +113,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "prepayment_amount":
             MessageLookupByLibrary.simpleMessage("Prepayment amount"),
         "price": MessageLookupByLibrary.simpleMessage("Price"),
+        "reject": MessageLookupByLibrary.simpleMessage("Reject"),
         "rent": MessageLookupByLibrary.simpleMessage("Rent"),
         "rent_amount": MessageLookupByLibrary.simpleMessage("Rent amount"),
         "rental_period": MessageLookupByLibrary.simpleMessage("Rental period"),
+        "request_complited":
+            MessageLookupByLibrary.simpleMessage("Request completed"),
         "ru": MessageLookupByLibrary.simpleMessage("Russian"),
         "security_deposit":
             MessageLookupByLibrary.simpleMessage("Security deposit"),
@@ -125,6 +136,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "smart_contract_page_title":
             MessageLookupByLibrary.simpleMessage("Smart contract creation"),
         "status": MessageLookupByLibrary.simpleMessage("Status"),
+        "to_home": MessageLookupByLibrary.simpleMessage("To the main page"),
         "transportation":
             MessageLookupByLibrary.simpleMessage("Transportation"),
         "type_not_selected":

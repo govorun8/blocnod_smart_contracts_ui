@@ -44,7 +44,7 @@ const _$SmartContractStatusEnumMap = {
   SmartContractStatus.created: 'created',
   SmartContractStatus.inProgress: 'inProgress',
   SmartContractStatus.finished: 'finished',
-  SmartContractStatus.canceled: 'canceled',
+  SmartContractStatus.cancelled: 'cancelled',
   SmartContractStatus.creatorConfirmation: 'creatorConfirmation',
   SmartContractStatus.executorConfirmation: 'executorConfirmation',
   SmartContractStatus.executorAgreement: 'executorAgreement',
