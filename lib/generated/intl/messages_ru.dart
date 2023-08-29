@@ -30,7 +30,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Механизм арбитража не выбран"),
         "arrival_date": MessageLookupByLibrary.simpleMessage("Дата прибытия"),
+        "balance": MessageLookupByLibrary.simpleMessage("Баланс"),
+        "balance_hint": MessageLookupByLibrary.simpleMessage("Введите баланс"),
         "cargo_weight": MessageLookupByLibrary.simpleMessage("Вес груза"),
+        "conract_confirmation":
+            MessageLookupByLibrary.simpleMessage("Подтверждение контракта"),
         "contractor_not_selected":
             MessageLookupByLibrary.simpleMessage("Контрагент не выбран"),
         "court": MessageLookupByLibrary.simpleMessage("Суд"),
@@ -41,6 +45,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "driver_name": MessageLookupByLibrary.simpleMessage("ФИО водителя"),
         "driver_number":
             MessageLookupByLibrary.simpleMessage("Контакт водителя"),
+        "email": MessageLookupByLibrary.simpleMessage("Почта"),
+        "email_hint": MessageLookupByLibrary.simpleMessage("Введите почту"),
+        "en": MessageLookupByLibrary.simpleMessage("Английский"),
         "enter_cargo_weight":
             MessageLookupByLibrary.simpleMessage("Введите вес груза"),
         "enter_own_arbitration_mechanism": MessageLookupByLibrary.simpleMessage(
@@ -60,9 +67,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Введите размер предоплаты"),
         "home_page_title":
             MessageLookupByLibrary.simpleMessage("Домашняя страница"),
+        "id": MessageLookupByLibrary.simpleMessage("Id"),
+        "id_hint": MessageLookupByLibrary.simpleMessage("Введите Id"),
         "insurance": MessageLookupByLibrary.simpleMessage("Страховка"),
         "money_page_title":
             MessageLookupByLibrary.simpleMessage("Денежная страница"),
+        "name": MessageLookupByLibrary.simpleMessage("Имя"),
+        "name_hint": MessageLookupByLibrary.simpleMessage("Введите имя"),
         "new_smart_contract":
             MessageLookupByLibrary.simpleMessage("Новый смарт контракт"),
         "own_version": MessageLookupByLibrary.simpleMessage("Свой вариант"),
@@ -75,10 +86,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Размер предоплаты"),
         "rent": MessageLookupByLibrary.simpleMessage("Аренда"),
         "rental_period": MessageLookupByLibrary.simpleMessage("Срок аренды"),
+        "ru": MessageLookupByLibrary.simpleMessage("Русский"),
         "select_contract_type":
             MessageLookupByLibrary.simpleMessage("Выберите тип контракта"),
         "select_contractor":
             MessageLookupByLibrary.simpleMessage("Выберите контрагента"),
+        "select_language":
+            MessageLookupByLibrary.simpleMessage("Выберите язык"),
         "select_payment_type":
             MessageLookupByLibrary.simpleMessage("Выберите тип оплаты"),
         "shipment_date": MessageLookupByLibrary.simpleMessage("Дата отгрузки"),

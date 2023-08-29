@@ -39,5 +39,17 @@
     "prepayment": "Предоплата",
     "payment_after": "Оплата по факту",
     "prepayment_amount": "Размер предоплаты",
-    "hint_prepayment_amount": "Введите размер предоплаты"
+    "hint_prepayment_amount": "Введите размер предоплаты",
+    "conract_confirmation": "Подтверждение контракта",
+    "id": "Id",
+    "id_hint": "Введите Id",
+    "name": "Имя",
+    "name_hint": "Введите имя",
+    "email": "Почта",
+    "email_hint": "Введите почту",
+    "balance": "Баланс",
+    "balance_hint": "Введите баланс",
+    "ru": "Русский",
+    "en": "Английский",
+    "select_language": "Выберите язык"
 }

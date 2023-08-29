@@ -12,16 +12,16 @@ class ContractsRepository {
     _dio = getIt<Dio>();
   }
 
-  Future<List<SmartContract>?> getAllRemoteContacts() async {
+  Future<List<SmartContract>?> getAllRemoteContacts(String userId) async {
     try {
-      final response = await _dio.get('/contracts');
+      final response = await _dio.get('/user/$userId/contracts');
 
-      return response.data['rows']
+      return response.data
           .map<SmartContract>(
               (smartContract) => SmartContract.fromJson(smartContract))
           .toList();
     } on DioException catch (e) {
-      if (e.response!.statusCode != 200) {
+      if (e.response?.statusCode != 200) {
         throw ResponseStatus.failed;
       }
     }

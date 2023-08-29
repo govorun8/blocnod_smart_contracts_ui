@@ -11,7 +11,7 @@ abstract class ServiceModule {
   @lazySingleton
   Dio get dio => Dio(
         BaseOptions(
-          baseUrl: '$kLocalHost/',
+          baseUrl: kLocalHost,
         ),
       );
 }

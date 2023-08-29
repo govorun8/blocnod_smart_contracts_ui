@@ -21,6 +21,10 @@ enum SmartContractType {
 enum SmartContractStatus {
   created,
   inProgress,
-  done,
-  error,
+  finished,
+  canceled,
+  creatorConfirmation,
+  executorConfirmation,
+  executorAgreement,
+  creatorAgreement,
 }

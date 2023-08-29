@@ -14,8 +14,8 @@ _$_SmartContract _$$_SmartContractFromJson(Map<String, dynamic> json) =>
       contractExecutor:
           User.fromJson(json['contractExecutor'] as Map<String, dynamic>),
       contractValue: (json['contractValue'] as num).toDouble(),
-      shipping: json['shipping'] as Map<String, dynamic>?,
       status: $enumDecode(_$SmartContractStatusEnumMap, json['status']),
+      shipping: json['shipping'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$$_SmartContractToJson(_$_SmartContract instance) =>
@@ -24,13 +24,17 @@ Map<String, dynamic> _$$_SmartContractToJson(_$_SmartContract instance) =>
       'contractCreator': instance.contractCreator,
       'contractExecutor': instance.contractExecutor,
       'contractValue': instance.contractValue,
-      'shipping': instance.shipping,
       'status': _$SmartContractStatusEnumMap[instance.status]!,
+      'shipping': instance.shipping,
     };
 
 const _$SmartContractStatusEnumMap = {
   SmartContractStatus.created: 'created',
   SmartContractStatus.inProgress: 'inProgress',
-  SmartContractStatus.done: 'done',
-  SmartContractStatus.error: 'error',
+  SmartContractStatus.finished: 'finished',
+  SmartContractStatus.canceled: 'canceled',
+  SmartContractStatus.creatorConfirmation: 'creatorConfirmation',
+  SmartContractStatus.executorConfirmation: 'executorConfirmation',
+  SmartContractStatus.executorAgreement: 'executorAgreement',
+  SmartContractStatus.creatorAgreement: 'creatorAgreement',
 };

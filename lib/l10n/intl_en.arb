@@ -39,5 +39,17 @@
     "prepayment": "Prepayment",
     "payment_after": "Payment after delivery",
     "prepayment_amount": "Prepayment amount",
-    "hint_prepayment_amount": "Enter prepayment amount"
+    "hint_prepayment_amount": "Enter prepayment amount",
+    "conract_confirmation": "Contract confirmation",
+    "id": "Id",
+    "id_hint": "Enter Id",
+    "name": "Name",
+    "name_hint": "Enter name",
+    "email": "Email",
+    "email_hint": "Enter email",
+    "balance": "Balance",
+    "balance_hint": "Enter balance",
+    "ru": "Russian",
+    "en": "English",
+    "select_language": "Select language"
 }

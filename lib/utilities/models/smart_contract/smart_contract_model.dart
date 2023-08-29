@@ -12,10 +12,11 @@ class SmartContract with _$SmartContract {
     required User contractCreator,
     required User contractExecutor,
     required double contractValue,
+    required SmartContractStatus status,
     Map<String, dynamic>? shipping,
     // required DateTime startDate,
     // required DateTime expirationDate,
-    required SmartContractStatus status,
+
     // required SmartContractType type,
   }) = _SmartContract;
 
