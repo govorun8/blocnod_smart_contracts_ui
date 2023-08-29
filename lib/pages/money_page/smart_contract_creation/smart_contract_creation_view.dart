@@ -1,3 +1,4 @@
+import 'package:blocnod_smart_contracts_ui/components/custom_confirm_button.dart';
 import 'package:blocnod_smart_contracts_ui/components/custom_date_picker.dart';
 import 'package:blocnod_smart_contracts_ui/components/custom_date_range_picker.dart';
 import 'package:blocnod_smart_contracts_ui/components/custom_dropdown.dart';
@@ -42,13 +43,23 @@ class SmartContractCreationViewState extends State<SmartContractCreationView> {
               return _buildSomethingWentWrong();
             }
 
-            return SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.only(left: 20, right: 20, top: 30),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: _buildForm(theme, state),
+            return GestureDetector(
+              onTap: () {
+                FocusScope.of(context).unfocus();
+              },
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: EdgeInsets.only(
+                    left: 20,
+                    right: 20,
+                    top: 30,
+                    bottom: MediaQuery.of(context).viewInsets.bottom,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: _buildForm(theme, state),
+                  ),
                 ),
               ),
             );
@@ -105,11 +116,7 @@ class SmartContractCreationViewState extends State<SmartContractCreationView> {
       widgets.addAll(_buildDeliveryForm(theme, state));
     }
 
-    widgets.add(
-      const SizedBox(
-        height: 50,
-      ),
-    );
+    widgets.add(_buildSaveButton(theme));
 
     return widgets;
   }
@@ -158,8 +165,8 @@ class SmartContractCreationViewState extends State<SmartContractCreationView> {
         onChanged: (value) {
           _cubit.changeRentalPrice(value);
         },
-        title: 'Arenda rub',
-        hint: 'rental',
+        title: translate.rent_amount,
+        hint: translate.hint_rent_amount,
         text: state.rentalPrice,
       ),
       const SizedBox(
@@ -170,15 +177,15 @@ class SmartContractCreationViewState extends State<SmartContractCreationView> {
         onChanged: (value) {
           _cubit.changeDeposit(value);
         },
-        title: 'zalog',
-        hint: 'zalog',
+        title: translate.security_deposit,
+        hint: translate.hint_security_deposit,
         text: state.deposit,
       ),
       const SizedBox(
         height: 10,
       ),
       CustomDatePicker(
-        title: 'platezh',
+        title: translate.payment_due_date,
         choosedDateTime: state.selectedDateTime ?? DateTime.now(),
         onChangedDate: (value) {
           if (value != null) {
@@ -192,7 +199,7 @@ class SmartContractCreationViewState extends State<SmartContractCreationView> {
         height: 10,
       ),
       CustomDatePicker(
-        title: 'dogovor',
+        title: translate.contract_start_date,
         choosedDateTime: state.selectedDateTime ?? DateTime.now(),
         onChangedDate: (value) {
           if (value != null) {
@@ -206,7 +213,7 @@ class SmartContractCreationViewState extends State<SmartContractCreationView> {
         height: 10,
       ),
       CustomSwitchButton(
-        title: 'UtilitiesPayment',
+        title: translate.utility_payment,
         theme: theme,
         selectedState: state.selectedUtilitiesPayment ?? false,
         onChanged: (value) {
@@ -214,7 +221,7 @@ class SmartContractCreationViewState extends State<SmartContractCreationView> {
         },
       ),
       CustomSwitchButton(
-        title: 'Жизнь с животными',
+        title: translate.pets_allowed,
         theme: theme,
         selectedState: state.selectedPetsAllowed ?? false,
         onChanged: (value) {
@@ -362,7 +369,9 @@ class SmartContractCreationViewState extends State<SmartContractCreationView> {
         ),
         secondChild: CustomTextField(
           onChanged: (value) {
-            _cubit.selectArbitrationMechanism(value);
+            if (value.isNotEmpty) {
+              _cubit.selectArbitrationMechanism(value);
+            }
           },
           title: translate.arbitration_mechanism,
           hint: translate.enter_own_arbitration_mechanism,
@@ -439,6 +448,16 @@ class SmartContractCreationViewState extends State<SmartContractCreationView> {
         ),
       ),
     ];
+  }
+
+  Widget _buildSaveButton(ThemeData theme) {
+    return CustomConfirmButton(
+      onTap: () {
+        _cubit.createSmartContract();
+      },
+      theme: theme,
+      title: translate.create_smart_contract,
+    );
   }
 
   Widget _buildSomethingWentWrong() {

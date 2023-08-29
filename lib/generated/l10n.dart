@@ -60,6 +60,16 @@ class S {
     );
   }
 
+  /// `sign up`
+  String get sign_up {
+    return Intl.message(
+      'sign up',
+      name: 'sign_up',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `sign in`
   String get sign_in {
     return Intl.message(
@@ -120,6 +130,16 @@ class S {
     );
   }
 
+  /// `Contract type`
+  String get contract_type {
+    return Intl.message(
+      'Contract type',
+      name: 'contract_type',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Type not selected`
   String get type_not_selected {
     return Intl.message(
@@ -155,6 +175,16 @@ class S {
     return Intl.message(
       'Select contructor',
       name: 'select_contractor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contractor`
+  String get contractor {
+    return Intl.message(
+      'Contractor',
+      name: 'contractor',
       desc: '',
       args: [],
     );
@@ -575,6 +605,166 @@ class S {
     return Intl.message(
       'Select language',
       name: 'select_language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rent amount`
+  String get rent_amount {
+    return Intl.message(
+      'Rent amount',
+      name: 'rent_amount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter rent amount`
+  String get hint_rent_amount {
+    return Intl.message(
+      'Enter rent amount',
+      name: 'hint_rent_amount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Security deposit`
+  String get security_deposit {
+    return Intl.message(
+      'Security deposit',
+      name: 'security_deposit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter security deposit`
+  String get hint_security_deposit {
+    return Intl.message(
+      'Enter security deposit',
+      name: 'hint_security_deposit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment due date`
+  String get payment_due_date {
+    return Intl.message(
+      'Payment due date',
+      name: 'payment_due_date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter payment due date`
+  String get hint_payment_due_date {
+    return Intl.message(
+      'Enter payment due date',
+      name: 'hint_payment_due_date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contract starts from`
+  String get contract_start_date {
+    return Intl.message(
+      'Contract starts from',
+      name: 'contract_start_date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter contract start date`
+  String get hint_contract_start_date {
+    return Intl.message(
+      'Enter contract start date',
+      name: 'hint_contract_start_date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Utility payment`
+  String get utility_payment {
+    return Intl.message(
+      'Utility payment',
+      name: 'utility_payment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter utility payment terms`
+  String get hint_utility_payment {
+    return Intl.message(
+      'Enter utility payment terms',
+      name: 'hint_utility_payment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pets allowed`
+  String get pets_allowed {
+    return Intl.message(
+      'Pets allowed',
+      name: 'pets_allowed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create smart contract`
+  String get create_smart_contract {
+    return Intl.message(
+      'Create smart contract',
+      name: 'create_smart_contract',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contracts on approval`
+  String get contract_on_approval {
+    return Intl.message(
+      'Contracts on approval',
+      name: 'contract_on_approval',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your contracts`
+  String get your_contracts {
+    return Intl.message(
+      'Your contracts',
+      name: 'your_contracts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Price`
+  String get price {
+    return Intl.message(
+      'Price',
+      name: 'price',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Status`
+  String get status {
+    return Intl.message(
+      'Status',
+      name: 'status',
       desc: '',
       args: [],
     );

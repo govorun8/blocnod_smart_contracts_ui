@@ -1,8 +1,10 @@
+import 'package:blocnod_smart_contracts_ui/components/custom_confirm_button.dart';
 import 'package:blocnod_smart_contracts_ui/components/custom_text_field.dart';
 import 'package:blocnod_smart_contracts_ui/generated/l10n.dart';
 import 'package:blocnod_smart_contracts_ui/pages/auth_page/auth_page_cubit.dart';
 import 'package:blocnod_smart_contracts_ui/pages/auth_page/auth_page_state.dart';
 import 'package:blocnod_smart_contracts_ui/utilities/injection_conf/injection.dart';
+import 'package:blocnod_smart_contracts_ui/utilities/models/enums.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -26,33 +28,40 @@ class AuthPageViewState extends State<AuthPageView> {
       create: (context) => _cubit..init(),
       child: Material(
         color: Colors.white,
-        child: BlocBuilder<AuthPageCubit, AuthPageState>(
-          builder: (context, state) {
-            return state.maybeMap(
-              inited: (value) {
-                return buildTextFields(
-                  theme,
-                  value.id,
-                  value.name,
-                  value.email,
-                  value.balance,
-                );
-              },
-              finished: (value) {
-                GoRouter.of(context).go('/');
-                return const SizedBox.shrink();
-              },
-              error: (value) {
-                return Text(
-                  'error',
-                  style: theme.textTheme.bodyLarge?.copyWith(
-                    color: Colors.red,
-                  ),
-                );
-              },
-              orElse: () => const SizedBox.shrink(),
-            );
-          },
+        child: SingleChildScrollView(
+          child: BlocBuilder<AuthPageCubit, AuthPageState>(
+            builder: (context, state) {
+              return state.maybeMap(
+                inited: (value) {
+                  return buildTextFields(
+                    theme,
+                    value.id,
+                    value.name,
+                    value.email,
+                    value.balance,
+                  );
+                },
+                finished: (value) {
+                  if (value.status == ResponseStatus.done) {
+                    WidgetsBinding.instance.addPostFrameCallback((_) {
+                      GoRouter.of(context).go('/');
+                    });
+                  }
+
+                  return const SizedBox.shrink();
+                },
+                error: (value) {
+                  return Text(
+                    'error',
+                    style: theme.textTheme.bodyLarge?.copyWith(
+                      color: Colors.red,
+                    ),
+                  );
+                },
+                orElse: () => const SizedBox.shrink(),
+              );
+            },
+          ),
         ),
       ),
     );
@@ -115,7 +124,7 @@ class AuthPageViewState extends State<AuthPageView> {
           const SizedBox(
             height: 50,
           ),
-          GestureDetector(
+          CustomConfirmButton(
             onTap: () {
               if (id != null &&
                   name != null &&
@@ -124,41 +133,35 @@ class AuthPageViewState extends State<AuthPageView> {
                 _cubit.createNewUser(id, name, email, balance);
               }
             },
-            child: Center(
-              child: Container(
-                width: 100,
-                height: 50,
-                color: Colors.blue,
-                child: Center(
-                  child: Text(
-                    translate.sign_in,
-                    style: theme.textTheme.bodyMedium,
-                  ),
-                ),
-              ),
-            ),
+            theme: theme,
+            title: translate.sign_up,
           ),
           const SizedBox(
             height: 50,
           ),
-          GestureDetector(
-            onTap: () {
-              GoRouter.of(context).go('/');
+          CustomTextField(
+            title: translate.id,
+            hint: translate.id_hint,
+            text: id,
+            onChanged: (value) {
+              _cubit.idChanged(value);
             },
-            child: Center(
-              child: Container(
-                width: 100,
-                height: 50,
-                color: Colors.blue,
-                child: Center(
-                  child: Text(
-                    'cheater',
-                    style: theme.textTheme.bodyMedium,
-                  ),
-                ),
-              ),
-            ),
           ),
+          const SizedBox(
+            height: 50,
+          ),
+          CustomConfirmButton(
+            onTap: () {
+              if (id != null) {
+                _cubit.enterApp(id);
+              }
+            },
+            theme: theme,
+            title: translate.sign_in,
+          ),
+          SizedBox(
+            height: MediaQuery.of(context).viewInsets.bottom + 50,
+          )
         ],
       ),
     );
