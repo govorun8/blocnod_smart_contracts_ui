@@ -20,12 +20,13 @@ SmartContract _$SmartContractFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$SmartContract {
-  String get id => throw _privateConstructorUsedError;
-  User get contractCreator => throw _privateConstructorUsedError;
-  User get contractExecutor => throw _privateConstructorUsedError;
-  double get contractValue => throw _privateConstructorUsedError;
-  SmartContractStatus get status => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get shipping => throw _privateConstructorUsedError;
+  SmartContractType get type => throw _privateConstructorUsedError;
+  String get creatorId => throw _privateConstructorUsedError;
+  String get executorId => throw _privateConstructorUsedError;
+  double get value => throw _privateConstructorUsedError;
+  String get arbitration => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get additionalStatements =>
+      throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,15 +41,12 @@ abstract class $SmartContractCopyWith<$Res> {
       _$SmartContractCopyWithImpl<$Res, SmartContract>;
   @useResult
   $Res call(
-      {String id,
-      User contractCreator,
-      User contractExecutor,
-      double contractValue,
-      SmartContractStatus status,
-      Map<String, dynamic>? shipping});
-
-  $UserCopyWith<$Res> get contractCreator;
-  $UserCopyWith<$Res> get contractExecutor;
+      {SmartContractType type,
+      String creatorId,
+      String executorId,
+      double value,
+      String arbitration,
+      Map<String, dynamic>? additionalStatements});
 }
 
 /// @nodoc
@@ -64,55 +62,39 @@ class _$SmartContractCopyWithImpl<$Res, $Val extends SmartContract>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? contractCreator = null,
-    Object? contractExecutor = null,
-    Object? contractValue = null,
-    Object? status = null,
-    Object? shipping = freezed,
+    Object? type = null,
+    Object? creatorId = null,
+    Object? executorId = null,
+    Object? value = null,
+    Object? arbitration = null,
+    Object? additionalStatements = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as SmartContractType,
+      creatorId: null == creatorId
+          ? _value.creatorId
+          : creatorId // ignore: cast_nullable_to_non_nullable
               as String,
-      contractCreator: null == contractCreator
-          ? _value.contractCreator
-          : contractCreator // ignore: cast_nullable_to_non_nullable
-              as User,
-      contractExecutor: null == contractExecutor
-          ? _value.contractExecutor
-          : contractExecutor // ignore: cast_nullable_to_non_nullable
-              as User,
-      contractValue: null == contractValue
-          ? _value.contractValue
-          : contractValue // ignore: cast_nullable_to_non_nullable
+      executorId: null == executorId
+          ? _value.executorId
+          : executorId // ignore: cast_nullable_to_non_nullable
+              as String,
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
               as double,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as SmartContractStatus,
-      shipping: freezed == shipping
-          ? _value.shipping
-          : shipping // ignore: cast_nullable_to_non_nullable
+      arbitration: null == arbitration
+          ? _value.arbitration
+          : arbitration // ignore: cast_nullable_to_non_nullable
+              as String,
+      additionalStatements: freezed == additionalStatements
+          ? _value.additionalStatements
+          : additionalStatements // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res> get contractCreator {
-    return $UserCopyWith<$Res>(_value.contractCreator, (value) {
-      return _then(_value.copyWith(contractCreator: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res> get contractExecutor {
-    return $UserCopyWith<$Res>(_value.contractExecutor, (value) {
-      return _then(_value.copyWith(contractExecutor: value) as $Val);
-    });
   }
 }
 
@@ -125,17 +107,12 @@ abstract class _$$_SmartContractCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id,
-      User contractCreator,
-      User contractExecutor,
-      double contractValue,
-      SmartContractStatus status,
-      Map<String, dynamic>? shipping});
-
-  @override
-  $UserCopyWith<$Res> get contractCreator;
-  @override
-  $UserCopyWith<$Res> get contractExecutor;
+      {SmartContractType type,
+      String creatorId,
+      String executorId,
+      double value,
+      String arbitration,
+      Map<String, dynamic>? additionalStatements});
 }
 
 /// @nodoc
@@ -149,37 +126,37 @@ class __$$_SmartContractCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? contractCreator = null,
-    Object? contractExecutor = null,
-    Object? contractValue = null,
-    Object? status = null,
-    Object? shipping = freezed,
+    Object? type = null,
+    Object? creatorId = null,
+    Object? executorId = null,
+    Object? value = null,
+    Object? arbitration = null,
+    Object? additionalStatements = freezed,
   }) {
     return _then(_$_SmartContract(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as SmartContractType,
+      creatorId: null == creatorId
+          ? _value.creatorId
+          : creatorId // ignore: cast_nullable_to_non_nullable
               as String,
-      contractCreator: null == contractCreator
-          ? _value.contractCreator
-          : contractCreator // ignore: cast_nullable_to_non_nullable
-              as User,
-      contractExecutor: null == contractExecutor
-          ? _value.contractExecutor
-          : contractExecutor // ignore: cast_nullable_to_non_nullable
-              as User,
-      contractValue: null == contractValue
-          ? _value.contractValue
-          : contractValue // ignore: cast_nullable_to_non_nullable
+      executorId: null == executorId
+          ? _value.executorId
+          : executorId // ignore: cast_nullable_to_non_nullable
+              as String,
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
               as double,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as SmartContractStatus,
-      shipping: freezed == shipping
-          ? _value._shipping
-          : shipping // ignore: cast_nullable_to_non_nullable
+      arbitration: null == arbitration
+          ? _value.arbitration
+          : arbitration // ignore: cast_nullable_to_non_nullable
+              as String,
+      additionalStatements: freezed == additionalStatements
+          ? _value._additionalStatements
+          : additionalStatements // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
   }
@@ -189,40 +166,41 @@ class __$$_SmartContractCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_SmartContract implements _SmartContract {
   const _$_SmartContract(
-      {required this.id,
-      required this.contractCreator,
-      required this.contractExecutor,
-      required this.contractValue,
-      required this.status,
-      final Map<String, dynamic>? shipping})
-      : _shipping = shipping;
+      {required this.type,
+      required this.creatorId,
+      required this.executorId,
+      required this.value,
+      required this.arbitration,
+      final Map<String, dynamic>? additionalStatements})
+      : _additionalStatements = additionalStatements;
 
   factory _$_SmartContract.fromJson(Map<String, dynamic> json) =>
       _$$_SmartContractFromJson(json);
 
   @override
-  final String id;
+  final SmartContractType type;
   @override
-  final User contractCreator;
+  final String creatorId;
   @override
-  final User contractExecutor;
+  final String executorId;
   @override
-  final double contractValue;
+  final double value;
   @override
-  final SmartContractStatus status;
-  final Map<String, dynamic>? _shipping;
+  final String arbitration;
+  final Map<String, dynamic>? _additionalStatements;
   @override
-  Map<String, dynamic>? get shipping {
-    final value = _shipping;
+  Map<String, dynamic>? get additionalStatements {
+    final value = _additionalStatements;
     if (value == null) return null;
-    if (_shipping is EqualUnmodifiableMapView) return _shipping;
+    if (_additionalStatements is EqualUnmodifiableMapView)
+      return _additionalStatements;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
 
   @override
   String toString() {
-    return 'SmartContract(id: $id, contractCreator: $contractCreator, contractExecutor: $contractExecutor, contractValue: $contractValue, status: $status, shipping: $shipping)';
+    return 'SmartContract(type: $type, creatorId: $creatorId, executorId: $executorId, value: $value, arbitration: $arbitration, additionalStatements: $additionalStatements)';
   }
 
   @override
@@ -230,27 +208,28 @@ class _$_SmartContract implements _SmartContract {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SmartContract &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.contractCreator, contractCreator) ||
-                other.contractCreator == contractCreator) &&
-            (identical(other.contractExecutor, contractExecutor) ||
-                other.contractExecutor == contractExecutor) &&
-            (identical(other.contractValue, contractValue) ||
-                other.contractValue == contractValue) &&
-            (identical(other.status, status) || other.status == status) &&
-            const DeepCollectionEquality().equals(other._shipping, _shipping));
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.creatorId, creatorId) ||
+                other.creatorId == creatorId) &&
+            (identical(other.executorId, executorId) ||
+                other.executorId == executorId) &&
+            (identical(other.value, value) || other.value == value) &&
+            (identical(other.arbitration, arbitration) ||
+                other.arbitration == arbitration) &&
+            const DeepCollectionEquality()
+                .equals(other._additionalStatements, _additionalStatements));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      id,
-      contractCreator,
-      contractExecutor,
-      contractValue,
-      status,
-      const DeepCollectionEquality().hash(_shipping));
+      type,
+      creatorId,
+      executorId,
+      value,
+      arbitration,
+      const DeepCollectionEquality().hash(_additionalStatements));
 
   @JsonKey(ignore: true)
   @override
@@ -268,28 +247,28 @@ class _$_SmartContract implements _SmartContract {
 
 abstract class _SmartContract implements SmartContract {
   const factory _SmartContract(
-      {required final String id,
-      required final User contractCreator,
-      required final User contractExecutor,
-      required final double contractValue,
-      required final SmartContractStatus status,
-      final Map<String, dynamic>? shipping}) = _$_SmartContract;
+      {required final SmartContractType type,
+      required final String creatorId,
+      required final String executorId,
+      required final double value,
+      required final String arbitration,
+      final Map<String, dynamic>? additionalStatements}) = _$_SmartContract;
 
   factory _SmartContract.fromJson(Map<String, dynamic> json) =
       _$_SmartContract.fromJson;
 
   @override
-  String get id;
+  SmartContractType get type;
   @override
-  User get contractCreator;
+  String get creatorId;
   @override
-  User get contractExecutor;
+  String get executorId;
   @override
-  double get contractValue;
+  double get value;
   @override
-  SmartContractStatus get status;
+  String get arbitration;
   @override
-  Map<String, dynamic>? get shipping;
+  Map<String, dynamic>? get additionalStatements;
   @override
   @JsonKey(ignore: true)
   _$$_SmartContractCopyWith<_$_SmartContract> get copyWith =>

@@ -32,6 +32,15 @@ class AuthPageCubit extends Cubit<AuthPageState> {
     }
   }
 
+  Future<void> enterApp(String id) async {
+    final result = await userController.getUserById(id);
+    if (result == ResponseStatus.done) {
+      emit(AuthPageState.finished(status: result));
+    } else {
+      emit(AuthPageState.error());
+    }
+  }
+
   Future<void> idChanged(String id) async {
     state.maybeMap(
       inited: (value) {

@@ -46,7 +46,7 @@ class MainNavigationBarState extends State<MainNavigationBar> {
     ),
     CustomNavBarItem(
       icon: SvgPicture.asset(
-        'assets/bottom_bar/settings.svg',
+        'assets/bottom_bar/money.svg',
         width: 50,
         height: 50,
       ),
@@ -68,6 +68,7 @@ class MainNavigationBarState extends State<MainNavigationBar> {
     }
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: PreferredSize(
         preferredSize: const Size(
           double.maxFinite,

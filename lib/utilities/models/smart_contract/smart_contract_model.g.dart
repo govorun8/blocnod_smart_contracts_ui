@@ -8,33 +8,26 @@ part of 'smart_contract_model.dart';
 
 _$_SmartContract _$$_SmartContractFromJson(Map<String, dynamic> json) =>
     _$_SmartContract(
-      id: json['id'] as String,
-      contractCreator:
-          User.fromJson(json['contractCreator'] as Map<String, dynamic>),
-      contractExecutor:
-          User.fromJson(json['contractExecutor'] as Map<String, dynamic>),
-      contractValue: (json['contractValue'] as num).toDouble(),
-      status: $enumDecode(_$SmartContractStatusEnumMap, json['status']),
-      shipping: json['shipping'] as Map<String, dynamic>?,
+      type: $enumDecode(_$SmartContractTypeEnumMap, json['type']),
+      creatorId: json['creatorId'] as String,
+      executorId: json['executorId'] as String,
+      value: (json['value'] as num).toDouble(),
+      arbitration: json['arbitration'] as String,
+      additionalStatements:
+          json['additionalStatements'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$$_SmartContractToJson(_$_SmartContract instance) =>
     <String, dynamic>{
-      'id': instance.id,
-      'contractCreator': instance.contractCreator,
-      'contractExecutor': instance.contractExecutor,
-      'contractValue': instance.contractValue,
-      'status': _$SmartContractStatusEnumMap[instance.status]!,
-      'shipping': instance.shipping,
+      'type': _$SmartContractTypeEnumMap[instance.type]!,
+      'creatorId': instance.creatorId,
+      'executorId': instance.executorId,
+      'value': instance.value,
+      'arbitration': instance.arbitration,
+      'additionalStatements': instance.additionalStatements,
     };
 
-const _$SmartContractStatusEnumMap = {
-  SmartContractStatus.created: 'created',
-  SmartContractStatus.inProgress: 'inProgress',
-  SmartContractStatus.finished: 'finished',
-  SmartContractStatus.canceled: 'canceled',
-  SmartContractStatus.creatorConfirmation: 'creatorConfirmation',
-  SmartContractStatus.executorConfirmation: 'executorConfirmation',
-  SmartContractStatus.executorAgreement: 'executorAgreement',
-  SmartContractStatus.creatorAgreement: 'creatorAgreement',
+const _$SmartContractTypeEnumMap = {
+  SmartContractType.rent: 'rent',
+  SmartContractType.transportation: 'transportation',
 };

@@ -35,9 +35,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "cargo_weight": MessageLookupByLibrary.simpleMessage("Вес груза"),
         "conract_confirmation":
             MessageLookupByLibrary.simpleMessage("Подтверждение контракта"),
+        "contract_on_approval":
+            MessageLookupByLibrary.simpleMessage("Контракты на согласовании"),
+        "contract_start_date":
+            MessageLookupByLibrary.simpleMessage("Договор вступает в силу с"),
+        "contract_type": MessageLookupByLibrary.simpleMessage("Тип контракта"),
+        "contractor": MessageLookupByLibrary.simpleMessage("Kонтрагент"),
         "contractor_not_selected":
             MessageLookupByLibrary.simpleMessage("Контрагент не выбран"),
         "court": MessageLookupByLibrary.simpleMessage("Суд"),
+        "create_smart_contract":
+            MessageLookupByLibrary.simpleMessage("Создать смарт контракт"),
         "departure_point":
             MessageLookupByLibrary.simpleMessage("Пункт отправления"),
         "destination_point":
@@ -53,6 +61,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "enter_own_arbitration_mechanism": MessageLookupByLibrary.simpleMessage(
             "Введите свой механизм арбитража"),
         "fonts_test": MessageLookupByLibrary.simpleMessage("Тест шрифтов"),
+        "hint_contract_start_date": MessageLookupByLibrary.simpleMessage(
+            "Укажите дату начала действия договора"),
         "hint_departure_point":
             MessageLookupByLibrary.simpleMessage("Адрес пункта отправления"),
         "hint_destination_point":
@@ -63,8 +73,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Введите контакт водителя"),
         "hint_insurance":
             MessageLookupByLibrary.simpleMessage("Введите страховку"),
+        "hint_payment_due_date": MessageLookupByLibrary.simpleMessage(
+            "Укажите крайнюю дату внесения платежа"),
         "hint_prepayment_amount":
             MessageLookupByLibrary.simpleMessage("Введите размер предоплаты"),
+        "hint_rent_amount": MessageLookupByLibrary.simpleMessage(
+            "Введите сумму арендной платы"),
+        "hint_security_deposit":
+            MessageLookupByLibrary.simpleMessage("Введите сумму залога"),
         "home_page_title":
             MessageLookupByLibrary.simpleMessage("Домашняя страница"),
         "id": MessageLookupByLibrary.simpleMessage("Id"),
@@ -79,14 +95,23 @@ class MessageLookup extends MessageLookupByLibrary {
         "own_version": MessageLookupByLibrary.simpleMessage("Свой вариант"),
         "payment_after":
             MessageLookupByLibrary.simpleMessage("Оплата по факту"),
+        "payment_due_date": MessageLookupByLibrary.simpleMessage(
+            "Крайняя дата внесения платежа"),
         "payment_type": MessageLookupByLibrary.simpleMessage("Тип оплаты"),
         "penalty": MessageLookupByLibrary.simpleMessage("Штраф"),
+        "pets_allowed":
+            MessageLookupByLibrary.simpleMessage("Животные разрешены"),
         "prepayment": MessageLookupByLibrary.simpleMessage("Предоплата"),
         "prepayment_amount":
             MessageLookupByLibrary.simpleMessage("Размер предоплаты"),
+        "price": MessageLookupByLibrary.simpleMessage("Стоимость"),
         "rent": MessageLookupByLibrary.simpleMessage("Аренда"),
+        "rent_amount":
+            MessageLookupByLibrary.simpleMessage("Сумма арендной платы"),
         "rental_period": MessageLookupByLibrary.simpleMessage("Срок аренды"),
         "ru": MessageLookupByLibrary.simpleMessage("Русский"),
+        "security_deposit":
+            MessageLookupByLibrary.simpleMessage("Сумма залога"),
         "select_contract_type":
             MessageLookupByLibrary.simpleMessage("Выберите тип контракта"),
         "select_contractor":
@@ -97,12 +122,17 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Выберите тип оплаты"),
         "shipment_date": MessageLookupByLibrary.simpleMessage("Дата отгрузки"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Войти"),
+        "sign_up": MessageLookupByLibrary.simpleMessage("Зарегистрироваться"),
         "smart_contract_page_title":
             MessageLookupByLibrary.simpleMessage("Создание смарт контракта"),
+        "status": MessageLookupByLibrary.simpleMessage("Статус"),
         "transportation":
             MessageLookupByLibrary.simpleMessage("Транспортировка"),
         "type_not_selected":
             MessageLookupByLibrary.simpleMessage("Тип не выбран"),
-        "your_address": MessageLookupByLibrary.simpleMessage("Ваш адрес")
+        "utility_payment":
+            MessageLookupByLibrary.simpleMessage("Оплата коммунальных услуг"),
+        "your_address": MessageLookupByLibrary.simpleMessage("Ваш адрес"),
+        "your_contracts": MessageLookupByLibrary.simpleMessage("Ваши контракты")
       };
 }

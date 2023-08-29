@@ -1,26 +1,24 @@
 import 'package:blocnod_smart_contracts_ui/generated/l10n.dart';
 import 'package:blocnod_smart_contracts_ui/pages/money_page/smart_contract_creation/smart_contract_creation_state.dart';
+import 'package:blocnod_smart_contracts_ui/utilities/controllers/contracts_controller.dart';
+import 'package:blocnod_smart_contracts_ui/utilities/controllers/user_controller.dart';
 import 'package:blocnod_smart_contracts_ui/utilities/injection_conf/injection.dart';
+import 'package:blocnod_smart_contracts_ui/utilities/models/enums.dart';
+import 'package:blocnod_smart_contracts_ui/utilities/models/user/user_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:uuid/uuid.dart';
+// import 'package:uuid/uuid.dart';
 
 class SmartContractCreationCubit extends Cubit<SmartContractCreationState> {
   SmartContractCreationCubit() : super(const SmartContractCreationState());
-
   final S translate = getIt<S>();
+  final UserController userController = getIt<UserController>();
+  final ContractsController contractsController = getIt<ContractsController>();
 
   Future<void> init() async {
     List<String> dropdownValues = [translate.rent, translate.transportation];
-    //request contructors
-    var uuid = const Uuid();
-    List<String> contructorIdList = [
-      uuid.v4(),
-      uuid.v4(),
-      uuid.v4(),
-      uuid.v4(),
-      uuid.v4(),
-    ];
+
+    final contructorIdList = await userController.getContructorsList();
 
     List<String> arbitrationMechanismList = [
       translate.court,
@@ -121,5 +119,27 @@ class SmartContractCreationCubit extends Cubit<SmartContractCreationState> {
 
   Future<void> changePrepaymentAmoount(String prepaymentAmount) async {
     emit(state.copyWith(prepaymentAmount: prepaymentAmount));
+  }
+
+  Future<void> createSmartContract() async {
+    User curentUser = userController.user;
+    Map<String, String> map = {};
+    if (state.selectedType != null &&
+        state.selectedContructor != null &&
+        state.selectedArbitrationMechanism != null) {
+      map.addAll({
+        'address': state.address ?? '',
+      });
+      await contractsController.createNewSmartContract(
+        state.selectedType == translate.rent
+            ? SmartContractType.rent
+            : SmartContractType.transportation,
+        curentUser.id,
+        state.selectedContructor!,
+        10,
+        state.selectedArbitrationMechanism!,
+        map,
+      );
+    }
   }
 }

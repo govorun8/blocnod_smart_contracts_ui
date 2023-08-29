@@ -10,6 +10,14 @@ import 'package:injectable/injectable.dart';
 class UserRepository {
   late final Dio _dio;
 
+  late final User currentUser;
+
+  User get user => currentUser;
+
+  set setUser(User user) {
+    currentUser = user;
+  }
+
   void init() {
     _dio = getIt<Dio>();
   }
@@ -29,6 +37,7 @@ class UserRepository {
             email: email,
           ).toJson());
       if (response.statusCode == 200) {
+        setUser = User(balance: balance, email: email, id: id, name: name);
         return ResponseStatus.done;
       } else {
         return ResponseStatus.failed;
@@ -37,5 +46,37 @@ class UserRepository {
       log(e.message ?? 'createNewUser');
       return ResponseStatus.failed;
     }
+  }
+
+  Future<ResponseStatus> getUserById(
+    String id,
+  ) async {
+    try {
+      final response = await _dio.get('/user/$id');
+      if (response.statusCode == 200) {
+        setUser = User.fromJson(response.data);
+        return ResponseStatus.done;
+      } else {
+        return ResponseStatus.failed;
+      }
+    } on DioException catch (e) {
+      log(e.message ?? 'getUserById');
+      return ResponseStatus.failed;
+    }
+  }
+
+  Future<List<User>?> getExecutors() async {
+    try {
+      final response = await _dio.get('/user/executors');
+      if (response.statusCode == 200) {
+        return response.data
+            .map<User>((smartContract) => User.fromJson(smartContract))
+            .toList();
+      }
+    } on DioException catch (e) {
+      log(e.message ?? 'getExecutors');
+      throw ResponseStatus.failed;
+    }
+    return null;
   }
 }
