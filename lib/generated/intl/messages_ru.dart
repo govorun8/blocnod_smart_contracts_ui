@@ -66,6 +66,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Введите вес груза"),
         "enter_own_arbitration_mechanism": MessageLookupByLibrary.simpleMessage(
             "Введите свой механизм арбитража"),
+        "enter_shipping_price":
+            MessageLookupByLibrary.simpleMessage("Введите стоимость доставки"),
         "fonts_test": MessageLookupByLibrary.simpleMessage("Тест шрифтов"),
         "hint_contract_start_date": MessageLookupByLibrary.simpleMessage(
             "Укажите дату начала действия договора"),
@@ -92,8 +94,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "id": MessageLookupByLibrary.simpleMessage("Id"),
         "id_hint": MessageLookupByLibrary.simpleMessage("Введите Id"),
         "insurance": MessageLookupByLibrary.simpleMessage("Страховка"),
-        "money_page_title":
-            MessageLookupByLibrary.simpleMessage("Денежная страница"),
+        "money_page_title": MessageLookupByLibrary.simpleMessage("Мои сделки"),
         "name": MessageLookupByLibrary.simpleMessage("Имя"),
         "name_hint": MessageLookupByLibrary.simpleMessage("Введите имя"),
         "new_smart_contract":
@@ -132,6 +133,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "select_payment_type":
             MessageLookupByLibrary.simpleMessage("Выберите тип оплаты"),
         "shipment_date": MessageLookupByLibrary.simpleMessage("Дата отгрузки"),
+        "shipping_price":
+            MessageLookupByLibrary.simpleMessage("Стоимость доставки"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Войти"),
         "sign_up": MessageLookupByLibrary.simpleMessage("Зарегистрироваться"),
         "smart_contract_page_title":

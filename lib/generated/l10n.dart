@@ -90,10 +90,10 @@ class S {
     );
   }
 
-  /// `Money page`
+  /// `My deals`
   String get money_page_title {
     return Intl.message(
-      'Money page',
+      'My deals',
       name: 'money_page_title',
       desc: '',
       args: [],
@@ -845,6 +845,26 @@ class S {
     return Intl.message(
       'Reject',
       name: 'reject',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Shipping price`
+  String get shipping_price {
+    return Intl.message(
+      'Shipping price',
+      name: 'shipping_price',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter shipping price`
+  String get enter_shipping_price {
+    return Intl.message(
+      'Enter shipping price',
+      name: 'enter_shipping_price',
       desc: '',
       args: [],
     );

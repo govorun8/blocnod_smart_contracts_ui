@@ -31,6 +31,7 @@ class SmartContractCreationState extends Equatable {
   final List<String>? listPaymentTypes;
   final String? prepaymentAmount;
   final ResponseStatus? responseStatus;
+  final String? shippingPrice;
 
   const SmartContractCreationState({
     this.typeList,
@@ -60,6 +61,7 @@ class SmartContractCreationState extends Equatable {
     this.listPaymentTypes,
     this.prepaymentAmount,
     this.responseStatus,
+    this.shippingPrice,
   });
 
   SmartContractCreationState copyWith({
@@ -90,6 +92,7 @@ class SmartContractCreationState extends Equatable {
     List<String>? listPaymentTypes,
     String? prepaymentAmount,
     ResponseStatus? responseStatus,
+    String? shippingPrice,
   }) {
     return SmartContractCreationState(
       typeList: typeList ?? this.typeList,
@@ -124,6 +127,7 @@ class SmartContractCreationState extends Equatable {
       listPaymentTypes: listPaymentTypes ?? this.listPaymentTypes,
       prepaymentAmount: prepaymentAmount ?? this.prepaymentAmount,
       responseStatus: responseStatus ?? this.responseStatus,
+      shippingPrice: shippingPrice ?? this.shippingPrice,
     );
   }
 
@@ -156,5 +160,6 @@ class SmartContractCreationState extends Equatable {
         listPaymentTypes,
         prepaymentAmount,
         responseStatus,
+        shippingPrice,
       ];
 }

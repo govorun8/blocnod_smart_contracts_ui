@@ -67,6 +67,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Enter cargo weight"),
         "enter_own_arbitration_mechanism": MessageLookupByLibrary.simpleMessage(
             "Enter own arbitration mechanism"),
+        "enter_shipping_price":
+            MessageLookupByLibrary.simpleMessage("Enter shipping price"),
         "fonts_test": MessageLookupByLibrary.simpleMessage("Fonts test"),
         "hint_contract_start_date":
             MessageLookupByLibrary.simpleMessage("Enter contract start date"),
@@ -94,7 +96,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "id": MessageLookupByLibrary.simpleMessage("Id"),
         "id_hint": MessageLookupByLibrary.simpleMessage("Enter Id"),
         "insurance": MessageLookupByLibrary.simpleMessage("Insurance"),
-        "money_page_title": MessageLookupByLibrary.simpleMessage("Money page"),
+        "money_page_title": MessageLookupByLibrary.simpleMessage("My deals"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
         "name_hint": MessageLookupByLibrary.simpleMessage("Enter name"),
         "new_smart_contract":
@@ -131,6 +133,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "select_payment_type":
             MessageLookupByLibrary.simpleMessage("Select payment type"),
         "shipment_date": MessageLookupByLibrary.simpleMessage("Shipment date"),
+        "shipping_price":
+            MessageLookupByLibrary.simpleMessage("Shipping price"),
         "sign_in": MessageLookupByLibrary.simpleMessage("sign in"),
         "sign_up": MessageLookupByLibrary.simpleMessage("sign up"),
         "smart_contract_page_title":

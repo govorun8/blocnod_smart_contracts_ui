@@ -321,6 +321,18 @@ class SmartContractCreationViewState extends State<SmartContractCreationView> {
       const SizedBox(
         height: 10,
       ),
+      CustomTextField(
+        key: const ValueKey('shippingPrice'),
+        title: translate.shipping_price,
+        hint: translate.enter_shipping_price,
+        text: state.shippingPrice,
+        onChanged: (value) {
+          _cubit.changeShippingPrice(value);
+        },
+      ),
+      const SizedBox(
+        height: 10,
+      ),
       CustomDatePicker(
         title: translate.shipment_date,
         choosedDateTime: state.shipmentDate ?? DateTime.now(),

@@ -143,6 +143,10 @@ class SmartContractCreationCubit extends Cubit<SmartContractCreationState> {
     emit(state.copyWith(prepaymentAmount: prepaymentAmount));
   }
 
+  Future<void> changeShippingPrice(String shippingPrice) async {
+    emit(state.copyWith(shippingPrice: shippingPrice));
+  }
+
   Future<void> createSmartContract() async {
     rememberValues();
     User curentUser = userController.user;
@@ -153,16 +157,32 @@ class SmartContractCreationCubit extends Cubit<SmartContractCreationState> {
       map.addAll({
         'address': state.address ?? '',
       });
-      final result = await contractsController.createNewSmartContract(
-        state.selectedType == translate.rent
-            ? SmartContractType.rent
-            : SmartContractType.transportation,
-        curentUser.id,
-        state.selectedContructor!,
-        10,
-        state.selectedArbitrationMechanism!,
-        map,
-      );
+
+      late final ResponseStatus result;
+
+      if (state.selectedType == translate.rent) {
+        final double rentalPrice = double.parse(state.rentalPrice ?? '');
+        final double deposit = double.parse(state.deposit ?? '');
+        result = await contractsController.createNewSmartContract(
+          SmartContractType.rent,
+          curentUser.id,
+          state.selectedContructor!,
+          (rentalPrice + deposit),
+          state.selectedArbitrationMechanism!,
+          map,
+        );
+      } else {
+        final double shippingPrice = double.parse(state.shippingPrice ?? '');
+        result = await contractsController.createNewSmartContract(
+          SmartContractType.transportation,
+          curentUser.id,
+          state.selectedContructor!,
+          shippingPrice,
+          state.selectedArbitrationMechanism!,
+          map,
+        );
+      }
+
       emit(state.copyWith(responseStatus: result));
     }
   }
